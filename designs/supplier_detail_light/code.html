@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Supplier Profile</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/10 dark:border-primary/20">
+<div class="flex items-center gap-4 w-full">
+<button class="flex items-center justify-center p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold flex-1">Supplier Profile</h2>
+<div class="flex gap-2">
+<button class="flex items-center justify-center p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">bookmark</span>
+</button>
+<button class="flex items-center justify-center p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">share</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Banner Section -->
+<div class="@container px-4 py-3">
+<div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden bg-primary/20 rounded-xl min-h-80 shadow-lg" data-alt="Modern high-tech industrial manufacturing facility interior" style='background-image: linear-gradient(0deg, rgba(11, 76, 76, 0.8) 0%, rgba(11, 76, 76, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAm-14_wmy8zE6TC54WE8FPAXAVm7k07CURFE_0w1WuVXMliwVF_senLk_Lx-UMc4eE1x9GdIuZIeiZtBW23_p2fweZKj9fIk1fko1P4YefTEc8LLY-8XPsOZYvqO9464ceUoEwNdk5XS24hXtYh8wDfYGLJJjO-GzwnTBen8LMkqaUNHXYfd0PkF0RjFw252-b-DquUHzptE15157Gw6AbGZtRTu9-9Dk7aFWEGuoqooeDVI54wPcqGTop-5MDpvuLjl3-tGp8Cww");'>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-primary/90 px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm font-bold">verified</span>
+<span class="text-xs font-bold text-primary">VERIFIED</span>
+</div>
+<div class="p-6">
+<h1 class="text-white text-3xl font-bold leading-tight drop-shadow-md">Global Manufacturing Solutions</h1>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-white/80 text-sm">location_on</span>
+<p class="text-white/90 text-sm">Shenzhen, China</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats Cards -->
+<div class="flex flex-wrap gap-3 px-4 py-3">
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center text-center">
+<p class="text-primary dark:text-slate-100 text-2xl font-bold">500</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Min Order Qty</p>
+</div>
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center text-center">
+<p class="text-primary dark:text-slate-100 text-2xl font-bold">15 days</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Avg Lead Time</p>
+</div>
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-xl border border-primary/20 bg-primary/5 p-4 items-center text-center">
+<p class="text-primary dark:text-slate-100 text-2xl font-bold">120+</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Global Clients</p>
+</div>
+</div>
+<!-- About Section -->
+<div class="px-4 py-4">
+<h3 class="text-lg font-bold mb-2">About</h3>
+<p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Leading provider of high-quality industrial components with over 20 years of experience in global export and manufacturing excellence. Specializing in precision engineering and sustainable production methods for international tech markets.
+        </p>
+</div>
+<!-- Product Tags -->
+<div class="px-4 py-4">
+<h3 class="text-lg font-bold mb-3">Product Specialties</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-slate-100 rounded-lg text-sm font-medium">Precision CNC</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-slate-100 rounded-lg text-sm font-medium">Injection Molding</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-slate-100 rounded-lg text-sm font-medium">PCB Assembly</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-slate-100 rounded-lg text-sm font-medium">Sustainable Plastics</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-slate-100 rounded-lg text-sm font-medium">Rapid Prototyping</span>
+</div>
+</div>
+<!-- Reviews Section -->
+<div class="px-4 py-4 mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Recent Reviews</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 fill-current">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-slate-500 text-sm">(42)</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white dark:bg-primary/10 rounded-xl border border-primary/10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden" data-alt="Reviewer profile avatar">
+<img alt="Profile" data-alt="Professional male portrait for profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaL9qZeH0gSePf_BNaRn7J6ArsrlCNHIcMdkDN8jDTBVple8eIRl2YAtrm6XVFINfDnUDs39oZImBQEZ0ZZgq7sH4wgAln7E04CBlhc9LpJ8he7ZHkYs-gu7xSzx_gD0Ry6IWSiiiu8nQG3nMrjE9PClTTMqEPrjnTWG8mrIlwLSFobc-jr3vwxQcXsBPqP7zSsP2QDg3Xc7CQp6fv2dlk97Y1bgLFAmqD0qB84lUEmCQSXV8FOJUbrF8wEPnqpKAwxMmWxHGiTrM"/>
+</div>
+<div>
+<p class="text-sm font-bold">Alexander Reed</p>
+<p class="text-xs text-slate-500">Logistics Manager, TechHub UK</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300">"Exceptional quality control. Their lead times are the most consistent we've found in the region. Highly recommended for bulk manufacturing."</p>
+</div>
+<div class="p-4 bg-white dark:bg-primary/10 rounded-xl border border-primary/10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden" data-alt="Reviewer profile avatar">
+<img alt="Profile" data-alt="Professional female portrait for profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFSGEpWjBMF8ZawDb0NvyJ4U2JWMJfUKUWnTx8QciBc9mqaofQ-qzpAZzTy30--jeD-jc3KVNOsg-xgVtnhy1qIjXfVGBH1dDHX9WxDCn8zqW2WHImeQ8I_9Z3DJNZqJM16mqWrDZUjG7qzEd5g5evvOv8BUaVwi9PffemJXFeNvbnLD1IXkYlSInAP5MwUhArC1jZp2V4pLLqpkTjteqFUwcGIGbCblWqAfFaZBgu8VgJKkIh_SkgZJcpkc2jcZlqy-dbsniZbbg"/>
+</div>
+<div>
+<p class="text-sm font-bold">Elena Vance</p>
+<p class="text-xs text-slate-500">Product Designer, Neo-Circuit</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300">"The prototyping phase was seamless. Communication was clear and the final products exceeded our specification requirements."</p>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-background-dark border-t border-primary/10 dark:border-primary/20 flex gap-2">
+<button class="flex-1 bg-[#07C160] hover:bg-[#06ae56] text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-sm shadow-sm">
+<span class="material-symbols-outlined text-lg">chat</span>
+            WeChat
+        </button>
+<button class="flex-1 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-sm shadow-sm">
+<span class="material-symbols-outlined text-lg">message</span>
+            WhatsApp
+        </button>
+<button class="flex-[1.5] bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-sm shadow-lg">
+<span class="material-symbols-outlined text-lg">request_quote</span>
+            Request Quote
+        </button>
+</div>
+</body></html>

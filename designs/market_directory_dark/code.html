@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supplier Directory | Community Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-2xl mx-auto w-full">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 px-4">Supplier Directory</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="relative flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-4 max-w-2xl mx-auto w-full">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-stretch rounded-xl h-12 bg-primary/10 border border-primary/20 focus-within:border-primary transition-colors">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-500 px-3 text-base" placeholder="Search markets or suppliers"/>
+</div>
+</label>
+</div>
+</header>
+<main class="flex-1 max-w-2xl mx-auto w-full pb-24">
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 text-sm font-medium">
+<span class="material-symbols-outlined text-sm">near_me</span>
+                Near Me
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 border border-primary/20 text-slate-700 dark:text-slate-200 px-4 text-sm font-medium">
+                Top Rated
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 border border-primary/20 text-slate-700 dark:text-slate-200 px-4 text-sm font-medium">
+                Open Now
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 border border-primary/20 text-slate-700 dark:text-slate-200 px-4 text-sm font-medium">
+                Verified
+            </button>
+</div>
+<section class="px-4 py-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Categories</h3>
+<a class="text-sm font-medium text-primary" href="#">View all</a>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<span class="text-xs font-medium">Organic</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">bakery_dining</span>
+</div>
+<span class="text-xs font-medium">Bakery</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">set_meal</span>
+</div>
+<span class="text-xs font-medium">Seafood</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">local_florist</span>
+</div>
+<span class="text-xs font-medium">Florist</span>
+</div>
+</div>
+</section>
+<section class="px-4 py-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Featured Suppliers</h3>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-primary/10">
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Fresh vegetables at a local market stall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQSyHktdmsQX6QkyqSbvAr2TU9PoJJTq08K58Lq7cweVKmggxuBn6R5B5P4THkkmW6a1y3XIZHZHKUU_QIqT-uWMVobIsVyUOjSqHpBSRlI68fpHYHu4J7Pjs6Afur_WcVRBhlrDy5XA_9aRICiN52jdTjfi0tM0xvGfwwSsxrCdT8Y_W7ZWjgcyPcmf2cNZJhlMxlYDsLau4OOn1lzhyIz06elfeHVx6ar3biBdiNi3TZdrlP7jeJmJvwW4v7F9x0wfKtfaCNkZ4"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-background-dark/90 px-2 py-1 rounded-lg text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">star</span> 4.9
+                        </div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Green Valley Organics</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Fresh Produce • 1.2 miles away</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-primary/10 text-primary">Sustainable</span>
+<span class="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-primary/10 text-primary">Family Owned</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-primary/10">
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Artisan sourdough bread on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXFjvP63H6VkXFYdmPb3WiwwJwnGv3hCWYcaAfDRxfIoOeGMaaM2qd1lRphjwaJcDIXRpzMasKFIaK-tdWteJL8SdSrZwq7TNNMxE8pfL2tN34wB687VJ5vvr64x1JsYkh6xnzBe2V8lpU6jRlP-mWCTHrB09SIRxbyOo1FiXlKYYH8U45pePawV94L05DPY05vNiD8nvFN8pJPKYhPOD16RN6H3Zhbm4vrq_peqbZH1sYwZudXCuklq3cD0oMqQrczP3_JLqau_8"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-background-dark/90 px-2 py-1 rounded-lg text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">star</span> 4.7
+                        </div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">The Artisan Hearth</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Bakery &amp; Cafe • 0.8 miles away</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-primary/10 text-primary">Local Grains</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-4">
+<h3 class="text-lg font-bold mb-4">Nearby Markets</h3>
+<div class="rounded-xl overflow-hidden h-48 relative border border-primary/10">
+<img class="w-full h-full object-cover opacity-50" data-alt="Stylized map showing local supplier locations" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2gh7MvntveLlTzpK2-SLvZEKMlbUxsGFCiM2FFJVv1mGJ7l1UdzvbtdqzcqUFVmgcpDxkAzSUlCsgmWzjMkO6jDjHdcX1HWD9-GiEx7Hk_s6mEyY2uJLCCPLVQsCoyawk1tyu0m5JNe9oWDi6BrWn3i-inSur4YKp08uxBJWUiLDLXM-bFqj8PsNZ3zPPsGPFX7J-2ND6jU5g9kaiW5jO_4JZ2CUKwxGH6ZRO-oDfKoubZ41rFtdwyHR_ievZxCmzm2OWcoJqK8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-white px-6 py-2 rounded-full font-bold shadow-xl flex items-center gap-2">
+<span class="material-symbols-outlined">map</span>
+                        View Map
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/20 px-4 pb-6 pt-2 z-50">
+<div class="max-w-2xl mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">storefront</span>
+<span class="text-[10px] font-medium">Directory</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Orders</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

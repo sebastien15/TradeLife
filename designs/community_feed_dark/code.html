@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1e1e1e",
+                        "accent-teal": "#95c6c6"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen antialiased">
+<!-- Main Container (iPhone 14 Pro aspect ratio simulation on desktop, full on mobile) -->
+<div class="relative mx-auto max-w-[393px] min-h-screen flex flex-col bg-background-light dark:bg-background-dark border-x border-slate-200 dark:border-slate-800 shadow-2xl">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-4 flex items-center justify-between">
+<div class="w-10"></div> <!-- Spacer for centering -->
+<h2 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">Community</h2>
+<button class="w-10 h-10 flex items-center justify-end text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</header>
+<!-- Filter Tabs -->
+<nav class="bg-background-light dark:bg-background-dark px-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex gap-6 overflow-x-auto no-scrollbar">
+<a class="border-b-2 border-primary py-3 text-sm font-bold text-slate-900 dark:text-slate-100 whitespace-nowrap" href="#">Trending</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-medium text-slate-500 dark:text-accent-teal/70 whitespace-nowrap" href="#">Recent</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-medium text-slate-500 dark:text-accent-teal/70 whitespace-nowrap" href="#">Following</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-medium text-slate-500 dark:text-accent-teal/70 whitespace-nowrap" href="#">Groups</a>
+</div>
+</nav>
+<!-- Feed Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Post Card 1 -->
+<div class="p-4">
+<div class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-surface-dark shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="w-full aspect-video bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Aerial view of lush green forest and sustainability theme" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4wXAHQI2m9KvFFdyqDMP4zZ6ZugL4uGJui4QgVcUahow8BqFZVWJaITn_U6mHs5jHFSW8HCuGV0L34_CYu9PXpUP-uMbFAjr22OI_pwFxba0k756gCiOiNlnP4hNFEva5qs7S1thYVkIa-jWkysWvzSU4EfiDOfmnN7QOT5TL0WnEQ0kHZ8eGAlQyWaevJfB4wniif142ZAA0x99geVRBwFSUdZnsnViLQEZ5h2SheWnwmB5UAHeUIzefUPYUIMvzHPVqv51lCNs')"></div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h3 class="text-lg font-bold leading-tight text-slate-900 dark:text-slate-100">Sustainable Living Tips</h3>
+<p class="mt-1 text-sm text-slate-600 dark:text-accent-teal/80">Join our discussion on how to reduce plastic waste in daily life.</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary dark:text-accent-teal">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="text-[10px] sm:text-xs">
+<p class="font-semibold text-slate-900 dark:text-slate-100">@eco_warrior</p>
+<p class="text-slate-500 dark:text-accent-teal/60">2h ago</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors">
+                                Join Discussion
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Post Card 2 -->
+<div class="p-4 pt-0">
+<div class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-surface-dark shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="w-full aspect-video bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Modern urban architecture and skyscrapers at dusk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHNaU6f69Su-rPWZJCPek8MdHX3KNS_YHkoQCFOqbgn_6sdBZWomNGccyvrAjTJW1Wct59bto1w9hUvMV-eRP6mtPJ1jiRbWGxkzutXAEMcy4gdXWrdjo9fV_ovWAunpxEFgA1RoWNgUXWCE9qxCvcD0D07FiVSI0FeiDQ2awLSzm7wZZpAsCPuYNLh8MUedi7bNlY1kledqrIhJUKj1AMg8EwTGC0rcpOjoGmWPoZj4KOhlQiu7IAOr_-oaw_Sg3kiQuxLK8-rkY')"></div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h3 class="text-lg font-bold leading-tight text-slate-900 dark:text-slate-100">Weekend Photo Challenge</h3>
+<p class="mt-1 text-sm text-slate-600 dark:text-accent-teal/80">Theme: Urban Architecture. Share your best shots of the city skyline!</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary dark:text-accent-teal">
+<span class="material-symbols-outlined text-sm">camera</span>
+</div>
+<div class="text-[10px] sm:text-xs">
+<p class="font-semibold text-slate-900 dark:text-slate-100">@city_explorer</p>
+<p class="text-slate-500 dark:text-accent-teal/60">5h ago</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors">
+                                View Entries
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Post Card 3 (Text Only) -->
+<div class="p-4 pt-0">
+<div class="p-4 rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-3">
+<div>
+<h3 class="text-lg font-bold leading-tight text-slate-900 dark:text-slate-100">Local Farmer's Market Meetup</h3>
+<p class="mt-1 text-sm text-slate-600 dark:text-accent-teal/80">Anyone interested in meeting up at the downtown market this Saturday morning? Looking for the best organic produce!</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary dark:text-accent-teal">
+<span class="material-symbols-outlined text-sm">shopping_basket</span>
+</div>
+<div class="text-[10px] sm:text-xs">
+<p class="font-semibold text-slate-900 dark:text-slate-100">@green_thumb</p>
+<p class="text-slate-500 dark:text-accent-teal/60">12h ago</p>
+</div>
+</div>
+<div class="flex gap-3 text-slate-400 dark:text-accent-teal/40">
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 24
+                                </div>
+<div class="flex items-center gap-1 text-xs text-primary dark:text-accent-teal">
+<span class="material-symbols-outlined text-lg">favorite</span> 152
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-[calc(50%-170px)] sm:right-[calc(50%-180px)] w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center z-30 ring-4 ring-white dark:ring-background-dark">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 z-40 bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-2 pb-8 pt-2 flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-accent-teal/50 hover:text-primary dark:hover:text-accent-teal transition-colors px-4" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-white px-4 border-t-2 border-primary -mt-2.5 pt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">group</span>
+<span class="text-[10px] font-bold">Community</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-accent-teal/50 hover:text-primary dark:hover:text-accent-teal transition-colors px-4" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-accent-teal/50 hover:text-primary dark:hover:text-accent-teal transition-colors px-4" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

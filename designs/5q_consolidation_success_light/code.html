@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consolidation Booking Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="flex items-center justify-between px-4 py-4 border-b border-primary/10 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Shipment Booked</h2>
+</header>
+<main class="flex-1 overflow-y-auto">
+<!-- Hero Section -->
+<section class="flex flex-col items-center px-6 py-8 text-center">
+<div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined !text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight mb-2">Your Consolidation is Booked!</h1>
+<p class="text-slate-600 dark:text-slate-400 text-sm max-w-xs mx-auto">
+                3 items from your warehouse are now consolidated for shipment.
+            </p>
+</section>
+<!-- Reference Card -->
+<section class="px-4 mb-6">
+<div class="bg-primary p-5 rounded-xl shadow-lg flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-primary/70 text-xs font-semibold uppercase tracking-wider">Reference ID</p>
+<p class="text-white text-xl font-bold">#SH-2024-CON-001</p>
+</div>
+<button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors border border-white/20">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+<span class="text-sm font-medium">Copy</span>
+</button>
+</div>
+</section>
+<!-- Summary Card -->
+<section class="px-4 mb-8">
+<div class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl overflow-hidden">
+<div class="px-4 py-3 border-b border-primary/10 bg-primary/5">
+<h3 class="font-bold text-sm uppercase tracking-wide opacity-80">Shipment Summary</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Consolidated Items</span>
+<span class="font-semibold text-sm">3 Packages</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Total Weight</span>
+<span class="font-semibold text-sm">38.5 kg</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Shipping Method</span>
+<div class="flex items-center gap-1.5 font-semibold text-sm">
+<span class="material-symbols-outlined text-primary text-lg">flight</span>
+                            Air Freight
+                        </div>
+</div>
+<div class="pt-3 border-t border-primary/10 flex justify-between items-center">
+<span class="text-slate-900 dark:text-slate-100 font-bold">Total Cost</span>
+<span class="text-primary dark:text-emerald-400 font-bold text-lg">516,150 RWF</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Steps / Timeline -->
+<section class="px-6 mb-12">
+<h3 class="font-bold text-lg mb-6">Next Steps</h3>
+<div class="relative space-y-8">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex items-start gap-4">
+<div class="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-white shadow-sm ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-sm text-primary">Booking confirmed</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Today, 10:45 AM</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-start gap-4">
+<div class="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-400 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-xs">pending</span>
+</div>
+<div class="flex flex-col">
+<p class="font-medium text-sm text-slate-400">Processing at Warehouse</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Expected: Within 24 hours</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-start gap-4">
+<div class="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-400 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-xs">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<p class="font-medium text-sm text-slate-400">In Transit</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Estimated delivery: Oct 24, 2024</p>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="relative flex items-start gap-4">
+<div class="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-400 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-xs">home</span>
+</div>
+<div class="flex flex-col">
+<p class="font-medium text-sm text-slate-400">Delivered</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Actions -->
+<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-primary/10 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined">package_2</span>
+            Track This Shipment
+        </button>
+<div class="text-center">
+<a class="inline-block text-primary dark:text-primary/80 font-semibold text-sm py-2 px-4 rounded-lg hover:underline transition-all" href="#">
+                Back to Warehouse
+            </a>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Contextual) -->
+<nav class="flex border-t border-primary/10 bg-background-light dark:bg-background-dark px-2 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">package_2</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Shipments</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">warehouse</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Warehouse</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Profile</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">more_horiz</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">More</p>
+</a>
+</nav>
+</body></html>

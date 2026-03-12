@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shipping Quotes - Logistics Workflow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-2xl mx-auto">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<h3 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center dark:text-white">Shipping Quotes</h3>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">sort</span>
+</button>
+</div>
+</div>
+<!-- Ship Tab Navigator -->
+<nav class="flex px-4 max-w-2xl mx-auto">
+<a class="flex-1 flex flex-col items-center py-3 border-b-2 border-primary text-primary font-bold text-sm" href="#">
+                Quote
+                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<a class="flex-1 flex flex-col items-center py-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm" href="#">
+                Active
+            </a>
+<a class="flex-1 flex flex-col items-center py-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm" href="#">
+                Warehouse
+            </a>
+<a class="flex-1 flex flex-col items-center py-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm" href="#">
+                Docs
+            </a>
+</nav>
+</header>
+<main class="max-w-2xl mx-auto pb-24">
+<!-- Route Summary Bar -->
+<div class="bg-slate-100 dark:bg-slate-900/50 p-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Guangzhou 🇨🇳</p>
+<span class="material-symbols-outlined text-xs text-slate-400">arrow_forward</span>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Kigali 🇷🇼</p>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">
+                    15,000 kg • 15.5 CBM
+                </p>
+</div>
+</div>
+<!-- Filter Pills -->
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-white text-sm font-bold shadow-sm">
+                All
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">flight</span> Air
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">sailing</span> Sea
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">rocket_launch</span> Express
+            </button>
+</div>
+<!-- Results List -->
+<div class="px-4 flex flex-col gap-4">
+<!-- Result 1: Air Freight -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">flight_takeoff</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Ethiopian Airlines</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Standard Air Freight</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-primary dark:text-emerald-400">$2,450</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold">USD Total</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4 mt-2">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            5-7 days
+                        </div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold transition-transform active:scale-95">
+                        Select
+                    </button>
+</div>
+</div>
+<!-- Result 2: Sea Freight (Best Value) -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border-2 border-emerald-500 dark:border-emerald-600 p-4 shadow-md relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">
+                    Best Value
+                </div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">directions_boat</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Maersk Line</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">LCL Consolidation</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-primary dark:text-emerald-400">$890</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold">USD Total</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4 mt-2">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            21-28 days
+                        </div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-transform active:scale-95">
+                        Select
+                    </button>
+</div>
+</div>
+<!-- Result 3: Express -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">bolt</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">DHL Express</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Door-to-Door Courier</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-primary dark:text-emerald-400">$4,200</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold">USD Total</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4 mt-2">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-sm">airport_shuttle</span>
+                            3-4 days
+                        </div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold transition-transform active:scale-95">
+                        Select
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 z-50">
+<div class="flex max-w-2xl mx-auto px-4 py-3 justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Shipments</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-emerald-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Quotes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Tracking</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Profile</span>
+</a>
+</div>
+</footer>
+</body></html>

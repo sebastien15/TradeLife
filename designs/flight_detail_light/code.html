@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seat Selection - 6H</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 40px repeat(3, 1fr);
+            gap: 8px;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #0b4c4c 0%, #1b3232 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-32">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-20 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-primary/10">
+<div class="text-primary dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Select Your Seat</h2>
+</div>
+<!-- Flight Summary Gradient Card -->
+<div class="p-4">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-gradient-primary overflow-hidden">
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-primary/40 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Departure</span>
+<span class="text-white text-2xl font-bold">SFO</span>
+<span class="text-white/80 text-sm">San Francisco</span>
+</div>
+<div class="flex flex-col items-center flex-1 px-4">
+<div class="w-full flex items-center gap-2">
+<div class="h-[1px] flex-1 bg-white/30"></div>
+<span class="material-symbols-outlined text-white text-lg">flight_takeoff</span>
+<div class="h-[1px] flex-1 bg-white/30"></div>
+</div>
+<span class="text-white/60 text-xs mt-1 italic">5h 15m</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-primary/40 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Arrival</span>
+<span class="text-white text-2xl font-bold">JFK</span>
+<span class="text-white/80 text-sm">New York</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-white/70 text-sm">calendar_today</span>
+<p class="text-white/90 text-sm font-medium">Oct 24, 2023</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-8 px-4 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors">
+                            Change Flight
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- What's Included Section -->
+<div class="px-4 py-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight mb-4">Fare Benefits</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="flex items-center gap-4 bg-primary/5 dark:bg-primary/20 p-3 rounded-lg border border-primary/10">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">1x Checked Bag</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Up to 23kg included</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-primary/5 dark:bg-primary/20 p-3 rounded-lg border border-primary/10">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined">wifi</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Free High-Speed WiFi</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Streaming quality</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-primary/5 dark:bg-primary/20 p-3 rounded-lg border border-primary/10">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Hot Meal Service</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Choice of 3 options</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-primary/5 dark:bg-primary/20 p-3 rounded-lg border border-primary/10">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined">event_repeat</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Flexible Change</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">No change fees</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Seat Selection Grid -->
+<div class="mt-8 px-4 flex flex-col items-center">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight mb-6 w-full">Cabin Map</h3>
+<!-- Legend -->
+<div class="flex flex-wrap justify-center gap-6 mb-8 bg-primary/5 dark:bg-primary/10 p-4 rounded-xl w-full max-w-md">
+<div class="flex items-center gap-2">
+<div class="size-5 rounded bg-slate-200 dark:bg-slate-700"></div>
+<span class="text-xs font-medium dark:text-slate-300">Available</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 rounded bg-primary shadow-[0_0_8px_rgba(11,76,76,0.5)]"></div>
+<span class="text-xs font-medium dark:text-slate-300">Selected</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">close</span>
+</div>
+<span class="text-xs font-medium dark:text-slate-300">Occupied</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-5 rounded border-2 border-primary/50 bg-primary/10"></div>
+<span class="text-xs font-medium dark:text-slate-300">Premium</span>
+</div>
+</div>
+<!-- Airplane Shell Visual -->
+<div class="relative w-full max-w-xs border-x-4 border-t-[40px] border-slate-200 dark:border-slate-800 rounded-t-[100px] pt-12 pb-10 px-6">
+<!-- Row Headers -->
+<div class="seat-grid mb-4">
+<div class="text-center text-[10px] font-bold text-slate-400">A</div>
+<div class="text-center text-[10px] font-bold text-slate-400">B</div>
+<div class="text-center text-[10px] font-bold text-slate-400">C</div>
+<div></div>
+<div class="text-center text-[10px] font-bold text-slate-400">D</div>
+<div class="text-center text-[10px] font-bold text-slate-400">E</div>
+<div class="text-center text-[10px] font-bold text-slate-400">F</div>
+</div>
+<!-- Seats Row 4 -->
+<div class="seat-grid mb-4">
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center justify-center text-[10px] font-bold text-slate-400">4</div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+</div>
+<!-- Seats Row 5 -->
+<div class="seat-grid mb-4">
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="flex items-center justify-center text-[10px] font-bold text-slate-400">5</div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+</div>
+<!-- Seats Row 6 (Focus Row) -->
+<div class="seat-grid mb-4">
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center justify-center text-[10px] font-bold text-slate-400">6</div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<!-- Seat 6H (Targeted Seat, let's call it 6F for this layout but visual focus is here) -->
+<div class="h-8 rounded bg-primary ring-2 ring-primary/40 flex items-center justify-center shadow-[0_0_15px_rgba(11,76,76,0.6)] animate-pulse">
+<span class="text-[10px] font-bold text-white">6H</span>
+</div>
+</div>
+<!-- Seats Row 7 -->
+<div class="seat-grid mb-4">
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center justify-center text-[10px] font-bold text-slate-400">7</div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-400 dark:bg-slate-500 flex items-center justify-center"><span class="material-symbols-outlined text-[12px] text-white">close</span></div>
+<div class="h-8 rounded bg-slate-200 dark:bg-slate-700"></div>
+</div>
+<!-- Seats Row 8 -->
+<div class="seat-grid mb-4">
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+<div class="flex items-center justify-center text-[10px] font-bold text-slate-400">8</div>
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+<div class="h-8 rounded border-2 border-primary/50 bg-primary/10"></div>
+</div>
+<div class="mt-8 text-center">
+<span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Economy Class</span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Price Summary & CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-30 bg-background-light dark:bg-[#1b3232] border-t border-primary/20 p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.2)]">
+<div class="max-w-xl mx-auto flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Selected Seat</span>
+<span class="text-xs bg-primary/20 text-primary dark:text-slate-200 px-1.5 rounded font-bold">6H</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-bold dark:text-white">$845.00</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Total</span>
+</div>
+</div>
+<button class="flex-1 max-w-[240px] flex items-center justify-center rounded-xl h-14 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold transition-all shadow-lg active:scale-[0.98]">
+                    Continue with This Flight
+                </button>
+</div>
+</div>
+</div>
+</body></html>

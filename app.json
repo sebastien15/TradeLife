@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "TradeLife",
+    "slug": "tradelife",
+    "scheme": "tradelife",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "newArchEnabled": false,
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.tradelife.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.tradelife.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-notifications",
+      "expo-image-picker",
+      "expo-document-picker",
+      "expo-local-authentication"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Wizard - Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #366363;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-3">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<button class="p-2 -ml-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined block">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Visa Application</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</div>
+<!-- Progress Indicator -->
+<div class="max-w-md mx-auto mt-4">
+<div class="flex items-center justify-between gap-2 px-2">
+<div class="h-1.5 flex-1 rounded-full bg-primary"></div>
+<div class="h-1.5 flex-1 rounded-full bg-primary"></div>
+<div class="h-1.5 flex-1 rounded-full bg-primary/20 dark:bg-primary/30"></div>
+<div class="h-1.5 flex-1 rounded-full bg-primary/20 dark:bg-primary/30"></div>
+</div>
+<p class="text-xs font-semibold text-primary mt-2 text-center uppercase tracking-wider">Step 2 of 4: Personal &amp; Travel Info</p>
+</div>
+</header>
+<main class="flex-1 max-w-md mx-auto w-full p-4 pb-32 space-y-8">
+<!-- Personal Details Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">person</span>
+<h2 class="text-xl font-bold">Personal Details</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Full Name (As per Passport)</label>
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Johnathan Doe" type="text"/>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Date of Birth</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="DD/MM/YYYY" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">calendar_month</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Passport Number</label>
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Enter passport ID" type="text"/>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="h-px bg-slate-200 dark:bg-primary/10"></div>
+<!-- Travel Details Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">flight_takeoff</span>
+<h2 class="text-xl font-bold">Travel Details</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Purpose of Visit</label>
+<div class="relative">
+<select class="w-full h-12 px-4 appearance-none rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option disabled="" selected="" value="">Select purpose</option>
+<option value="tourism">Tourism (L)</option>
+<option value="business">Business (M)</option>
+<option value="work">Work (Z)</option>
+<option value="study">Study (X)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Intended Duration (Days)</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Number of days" type="number"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="h-px bg-slate-200 dark:bg-primary/10"></div>
+<!-- Contact in China Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h2 class="text-xl font-bold">Contact in China</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Name of Host or Hotel</label>
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Name of contact person/hotel" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Phone Number</label>
+<input class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+86 XXX XXXX XXXX" type="tel"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400">Full Address</label>
+<textarea class="w-full p-4 rounded-lg bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Street, District, City, Province" rows="3"></textarea>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-primary/10 p-4">
+<div class="max-w-md mx-auto flex items-center gap-4">
+<button class="flex-1 h-14 font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-xl transition-colors">
+                Back
+            </button>
+<button class="flex-[2] h-14 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+                Continue
+            </button>
+</div>
+</footer>
+</body></html>

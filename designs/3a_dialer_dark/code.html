@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec5b13",
+              "background-light": "#f8f6f6",
+              "background-dark": "#121212",
+              "surface-dark": "#1e1e1e",
+              "keypad-dark": "#2c2c2c",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .iphone-container {
+            width: 393px;
+            height: 852px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-200 dark:bg-slate-950 flex items-center justify-center min-h-screen py-10">
+<!-- iPhone 14 Pro Simulation Container -->
+<div class="iphone-container bg-background-dark text-slate-100 shadow-2xl rounded-[55px] border-[8px] border-slate-900 flex flex-col relative">
+<!-- Status Bar Area (Mock) -->
+<div class="h-11 flex justify-between items-center px-8 pt-2">
+<span class="text-sm font-semibold">9:41</span>
+<div class="h-6 w-24 bg-black rounded-full"></div> <!-- Dynamic Island -->
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="material-symbols-outlined text-sm">battery_full</span>
+</div>
+</div>
+<!-- Workflow Label -->
+<div class="text-center py-2">
+<p class="text-[12px] font-medium text-slate-500 tracking-wider">WORKFLOW 3 — CALLING</p>
+</div>
+<!-- Navigation Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-surface-dark/50 backdrop-blur-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined text-white">arrow_back_ios_new</span>
+</button>
+<h3 class="text-lg font-bold text-white">Call Rwanda</h3>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined text-white">more_horiz</span>
+</button>
+</header>
+<!-- Balance Strip -->
+<section class="bg-surface-dark h-[44px] flex items-center justify-between px-6 border-y border-white/5">
+<p class="text-sm font-bold text-white">Balance: 50,000 RWF</p>
+<p class="text-sm text-slate-400">120 RWF/min</p>
+</section>
+<!-- Number Entry Display -->
+<section class="flex-1 flex flex-col items-center justify-center px-6">
+<div class="text-center mb-4">
+<h1 class="text-4xl font-bold tracking-tight text-white mb-2">+250 78...</h1>
+<p class="text-primary text-sm font-medium">Add to contacts</p>
+</div>
+</section>
+<!-- Keypad Grid -->
+<section class="px-8 pb-8 grid grid-cols-3 gap-y-5 gap-x-6 justify-items-center">
+<!-- Row 1 -->
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">1</span>
+<span class="text-[10px] text-slate-400 font-bold"> </span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">2</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">ABC</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">3</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">DEF</span>
+</button>
+<!-- Row 2 -->
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">4</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">GHI</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">5</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">JKL</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">6</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">MNO</span>
+</button>
+<!-- Row 3 -->
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">7</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">PQRS</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">8</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">TUV</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">9</span>
+<span class="text-[10px] text-slate-400 font-bold tracking-widest">WXYZ</span>
+</button>
+<!-- Row 4 -->
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">*</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex flex-col items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-3xl font-semibold">0</span>
+<span class="text-[14px] text-slate-400 font-bold">+</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-keypad-dark flex items-center justify-center active:bg-slate-700 transition-colors">
+<span class="text-2xl font-semibold">#</span>
+</button>
+</section>
+<!-- Primary Call Button -->
+<section class="flex flex-col items-center gap-6 pb-12">
+<button class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[40px] fill-current">call</span>
+</button>
+</section>
+<!-- Bottom Tab Bar -->
+<nav class="mt-auto bg-surface-dark border-t border-white/5 px-6 pb-8 pt-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-[28px]">history</span>
+<span class="text-[10px] font-medium uppercase tracking-tight">Recents</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-[28px]">group</span>
+<span class="text-[10px] font-medium uppercase tracking-tight">Contacts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] fill-current" style="font-variation-settings: 'FILL' 1">grid_view</span>
+<span class="text-[10px] font-medium uppercase tracking-tight">Keypad</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-tight">Settings</span>
+</a>
+</nav>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full"></div>
+</div>
+</body></html>

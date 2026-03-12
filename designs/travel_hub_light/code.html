@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Travel Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#0b4c4c",
+                "background-light": "#f6f8f8",
+                "background-dark": "#112121",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-primary/20 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">menu</span>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Travel</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-1">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Hero Banner -->
+<div class="px-4 pt-6">
+<div class="relative w-full h-48 rounded-xl overflow-hidden bg-primary flex items-end p-6 group">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Commercial airplane flying above fluffy white clouds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ed_3lkqxp8KNTEjpf6E0CC64dR_be9tIBU4FTlC8TfuV-I4g4M6RQWX7k7uQYskgYHD1xyyXD_tOfEBPGAc8wET87Uaf7iSQ3297YgQK5QThKqFzohFhmLriO6Ay0K68MMeLZqj9gm1bTB9xfv8wwfXpqTo5k3-UIRqAgFgWPhOXWI9nBna2uMz1X5sZ8jOcvMlEVvDZ2BJKDR-ZxzbHdMQm3ugV-29gULa7Gww-E48j1xYHlFq7X-PeEAJnmvzPI1pnNGAhjSM');">
+</div>
+<div class="relative z-10">
+<h1 class="text-2xl font-bold text-white mb-1">Plan Your Journey</h1>
+<p class="text-white/80 text-sm">Explore seamless travel solutions today</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-white text-xs">auto_awesome</span>
+<span class="text-white text-[10px] font-bold uppercase tracking-wider">AI Powered</span>
+</div>
+</div>
+</div>
+<!-- Service Grid -->
+<div class="px-4 py-8">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                Our Services
+            </h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Visa Application -->
+<button class="bg-white dark:bg-primary/10 p-5 rounded-xl border border-slate-200 dark:border-primary/20 flex flex-col items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">contract</span>
+</div>
+<span class="text-sm font-semibold text-center">Visa Application</span>
+</button>
+<!-- Book Flight -->
+<button class="bg-white dark:bg-primary/10 p-5 rounded-xl border border-slate-200 dark:border-primary/20 flex flex-col items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">flight_takeoff</span>
+</div>
+<span class="text-sm font-semibold text-center">Book Flight</span>
+</button>
+<!-- Hotels (Coming Soon) -->
+<div class="bg-slate-50 dark:bg-slate-800/20 p-5 rounded-xl border border-slate-200 dark:border-slate-700/50 flex flex-col items-center gap-3 opacity-60 relative overflow-hidden">
+<div class="absolute top-2 right-2">
+<span class="bg-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">Soon</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-3xl">hotel</span>
+</div>
+<span class="text-sm font-semibold text-center">Hotels</span>
+</div>
+<!-- Inspector -->
+<button class="bg-white dark:bg-primary/10 p-5 rounded-xl border border-slate-200 dark:border-primary/20 flex flex-col items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<span class="text-sm font-semibold text-center">Inspector</span>
+</button>
+</div>
+</div>
+<!-- Travel Tips Horizontal Scroll -->
+<div class="py-4">
+<div class="px-4 flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Travel Tips</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 hide-scrollbar">
+<!-- Tip 1 -->
+<div class="min-w-[280px] w-[280px] h-40 rounded-xl overflow-hidden relative flex items-end p-4 border border-slate-200 dark:border-primary/20 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Open luggage suitcase packed with colorful summer clothes" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHfmuTnRjHBp_SEVAW84ZLT3mO85v27IDZemjE7fimmniinlSg6GJiyU63MoqqVnOpIiRSdJ3RcUdixcQH31GtcEdGTq3OuQWZVVnfPGUrBZerXk0fOXAct6oLw0zZGVM4eAfgW2FFWC5hnJMkbhGUu8WTecgOzjwE8FReN15yksZDKXTF9I9rfyf7ytAWDM9qRxF0dn0pDS6KMJyE6tqLiUCeXyM-EpF2lCQmiy1NIL0FAuq3Qpwffny98TotEnEN2EH6200vsak');">
+</div>
+<div class="relative z-10">
+<p class="text-[10px] text-primary bg-primary/20 backdrop-blur-sm px-2 py-0.5 rounded-full inline-block font-bold mb-2 uppercase tracking-widest bg-white/90">Gear</p>
+<h4 class="text-white font-bold leading-snug">Essential Packing List for 2024 Travels</h4>
+</div>
+</div>
+<!-- Tip 2 -->
+<div class="min-w-[280px] w-[280px] h-40 rounded-xl overflow-hidden relative flex items-end p-4 border border-slate-200 dark:border-primary/20 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Collection of various international paper banknotes and coins" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfFz00TWkcIQVPEOH0FwLSb3c-G5-_bVEf7VmK_QgaEYPFcsAN_PVlSn5kxhgoeOrYRgw45__Rr6C2HuJLrV6jhhUYeKDqUBIQc78H1Od0fmyuE4fprVHLnbsidSa-_mxDITCAUIu_UqNlmKeLT-dw5AbnY2Ed64Ma4ybXPJgjixk3kIKD7rj4V3EopGVK7V1AFlmcC24EyYjNVGP784f-6xRkg1oHoBqP0RsvccXndXdA_ZPPQRNy6lgvzqJ2QtjXKL9TuuNSxgA');">
+</div>
+<div class="relative z-10">
+<p class="text-[10px] text-primary bg-primary/20 backdrop-blur-sm px-2 py-0.5 rounded-full inline-block font-bold mb-2 uppercase tracking-widest bg-white/90">Finance</p>
+<h4 class="text-white font-bold leading-snug">Best Ways to Exchange Currency without Fees</h4>
+</div>
+</div>
+<!-- Tip 3 -->
+<div class="min-w-[280px] w-[280px] h-40 rounded-xl overflow-hidden relative flex items-end p-4 border border-slate-200 dark:border-primary/20 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Person holding a passport and smartphone with boarding pass" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGI9AV3A7FHusPj3svLPpmiAN6zWYj10LEZf9ZPXHEhpoCux-4_4-J8uX21pAjy9Tp9xLRq9n_1-KtDI4WuDguWUH87wsp-n6_Vr3Y_iP4opiDbgH6bNM-kqNBmRVwpdR9_CyNbyeCMOqSEbSzmIOVyQp4himCKLcs2eLhH1b4w6f9XibaELdK_82w_3T0rruUohgyXotn4K36p3Ytni5f05Hx3xS3dKaHJgodFT2T4YUqKsdRk5M_EuCDbhx2yRxN_8g5EP1OSSQ');">
+</div>
+<div class="relative z-10">
+<p class="text-[10px] text-primary bg-primary/20 backdrop-blur-sm px-2 py-0.5 rounded-full inline-block font-bold mb-2 uppercase tracking-widest bg-white/90">Legal</p>
+<h4 class="text-white font-bold leading-snug">Updated Visa Requirements for EU Countries</h4>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-white dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

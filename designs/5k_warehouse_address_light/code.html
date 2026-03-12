@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Warehouse Address - Shipping &amp; Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                        "accent-yellow": "#FFD700",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-primary/20 p-4">
+<div class="flex items-center gap-4 max-w-lg mx-auto w-full">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h3 class="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100">Warehouse Address</h3>
+</div>
+</header>
+<main class="flex-1 w-full max-w-lg mx-auto p-4 space-y-6">
+<!-- Address Card Section -->
+<section class="space-y-4">
+<div class="overflow-hidden rounded-xl bg-white dark:bg-primary/10 border border-slate-200 dark:border-primary/30 shadow-sm">
+<div class="w-full aspect-video bg-slate-200 dark:bg-primary/20 relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Modern logistics warehouse building exterior" data-location="Guangzhou, China" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOHIzpeDghcodLcDuo0vC45F1A7EOADKiV_oIMkHFpLoCWk-h1nsqxpC975E0F62tt9Y1W3dtkGd2QBQ3m5EzYTOHZJpnZvDcVfgnX8do_beVltwBbiv-K_3IWHEBRTOBdcpRoUJnqFoEuHhxVy-sGHr0cvVJdL4r4ftSNWCzakDbgXhP3joDYEcHq1BMR4hPpDwsQBdsK5dB7qCO9x2c2jM8GF8eAhtHAF8gDtStcwTBvxmJ7S-UFCkZ95NmhJS9c5QJC0XEY8oM')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Official Hub</span>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-slate-100 text-xl">warehouse</span>
+<p class="text-xl font-bold leading-tight text-slate-900 dark:text-slate-100">TradeLife Warehouse</p>
+</div>
+<p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                        Building 3, Unit 201, No. 88 Haizhu Avenue, Haizhu District, Guangzhou, Guangdong Province, China 510000
+                    </p>
+</div>
+</div>
+</section>
+<!-- Reference Identifier -->
+<section class="bg-white dark:bg-primary/10 border border-slate-200 dark:border-primary/30 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/10 dark:bg-primary/30 flex items-center justify-center text-primary dark:text-slate-100">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col">
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Recipient Reference</p>
+<p class="text-base font-medium text-slate-900 dark:text-slate-100">
+                        John Mukwano — <span class="text-primary dark:text-teal-400 font-bold">TL-RW-00123</span>
+</p>
+</div>
+</div>
+<div class="flex size-6 items-center justify-center">
+<div class="size-2.5 rounded-full bg-green-500 animate-pulse"></div>
+</div>
+</section>
+<!-- Primary Action -->
+<section>
+<button class="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-lg transition-all shadow-lg active:scale-[0.98]">
+<span class="material-symbols-outlined">content_copy</span>
+                Copy Full Address
+            </button>
+</section>
+<!-- Share Section -->
+<section class="space-y-3">
+<p class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest px-1">Quick Share</p>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-between w-full p-4 rounded-xl border border-green-200 bg-green-50 dark:bg-green-900/10 dark:border-green-500/30 text-green-700 dark:text-green-400 font-semibold hover:bg-green-100 dark:hover:bg-green-900/20 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">chat</span>
+                        Share via WhatsApp
+                    </div>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 p-4 rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/10 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">sms</span>
+                        SMS
+                    </button>
+<button class="flex items-center justify-center gap-2 p-4 rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/10 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">mail</span>
+                        Email
+                    </button>
+</div>
+</div>
+</section>
+<!-- Notes Card -->
+<section class="bg-accent-yellow/10 border-l-4 border-accent-yellow p-5 rounded-r-xl space-y-2">
+<div class="flex items-center gap-2 text-accent-yellow dark:text-yellow-400">
+<span class="material-symbols-outlined text-xl">info</span>
+<p class="font-bold text-sm uppercase tracking-wide">Important Logistics Notes</p>
+</div>
+<ul class="space-y-1.5">
+<li class="flex items-start gap-2 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-xs mt-1 text-accent-yellow">fiber_manual_record</span>
+<span class="font-medium">Declare your goods first</span>
+</li>
+<li class="flex items-start gap-2 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-xs mt-1 text-accent-yellow">fiber_manual_record</span>
+<span class="font-medium">Free storage for 30 days</span>
+</li>
+</ul>
+</section>
+<div class="h-20"></div> <!-- Spacer for scrolling -->
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-primary/30 px-4 py-2 flex justify-around items-center max-w-lg mx-auto w-full">
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span class="text-[10px] font-medium">Orders</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary dark:text-white" href="#">
+<div class="relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">warehouse</span>
+<div class="absolute -top-1 -right-1 size-2 bg-primary dark:bg-teal-400 rounded-full border border-white dark:border-background-dark"></div>
+</div>
+<span class="text-[10px] font-bold">Warehouse</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-[10px] font-medium">Shipping</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

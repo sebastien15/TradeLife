@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentor Chat Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-20">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-10 border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3">
+<div class="flex items-center justify-between max-w-2xl mx-auto">
+<h1 class="text-xl font-bold tracking-tight">Mentor Chat</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</nav>
+<main class="max-w-2xl mx-auto px-4 py-6 space-y-8">
+<!-- Intro Card for First-time Users -->
+<section>
+<div class="relative overflow-hidden rounded-xl bg-primary/10 border border-primary/20 p-6">
+<div class="flex flex-col @md:flex-row gap-6 items-center">
+<div class="flex-1 space-y-3">
+<h2 class="text-lg font-bold text-primary dark:text-slate-100">Unlock your potential</h2>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            Connect with verified industry experts for personalized career guidance, portfolio reviews, and technical mentorship.
+                        </p>
+<button class="px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+                            Find a Mentor
+                        </button>
+</div>
+<div class="hidden @md:block w-32 h-32 rounded-full bg-primary/20 flex-shrink-0 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent" data-alt="Abstract teal geometric pattern background"></div>
+<span class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-primary text-5xl opacity-40">school</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Available Mentors (Horizontal Scroll) -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Available Now</h3>
+<a class="text-sm font-medium text-primary hover:underline" href="#">View all</a>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-2 scrollbar-hide -mx-4 px-4">
+<!-- Mentor Card 1 -->
+<div class="flex-shrink-0 w-32 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 p-1 group-hover:border-primary transition-colors">
+<div class="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 bg-cover bg-center" data-alt="Professional headshot of Dr. Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIokAs14jUk6P9LQ0VWWcl8E2RPxJbMJQS8Zi0o9UrLT45lmBm8ev-xOZEaUO-sbYP5RH2tQcstbPFVvLIh5krPKmcAPUlPk0kWqKUYsyHAO9lpSzU4JYP1UOsxVzpAxqxptb84eRgNd68wpX5r_R-0Zmq2JEmKiaijjTK4p8wypv075Cz6FNJWCR6RcdpGn3yR4f7vKjjV3mafKNdVqms_oWB9eBB7GHUG3N5CGr2UXT-k-DAdxdJAKOYFQQJecGkgkFmmaNehfk')"></div>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold truncate w-28">Dr. Smith</p>
+<p class="text-xs text-slate-500">UX Design</p>
+</div>
+</div>
+<!-- Mentor Card 2 -->
+<div class="flex-shrink-0 w-32 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 p-1 group-hover:border-primary transition-colors">
+<div class="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 bg-cover bg-center" data-alt="Professional headshot of Sarah Lee" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3C3uBTS-AHzYBOPG1Mmn9CjBlwv8UV5uLHKf7EabeoCqtjQwbarg-27votIdsRQF3QuPBkC_e-hDJy926Phd0FKaE3PjZAOBvq30XSv_2T-fHW49nmP7hg1R883y1yMtVCx5fGLZ0Hphc34RPPxplsSOKj1O2yb9n3q9btHX9aPA21O4udqcDSbUKvA1P2CLUGxW6TYN_GlT7VLGQJLisbkzvY8WT3ywKRH6XmGF__jW970chCnQr9dAboFPak1NwQyx7BTessRs')"></div>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold truncate w-28">Sarah Lee</p>
+<p class="text-xs text-slate-500">Marketing</p>
+</div>
+</div>
+<!-- Mentor Card 3 -->
+<div class="flex-shrink-0 w-32 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 p-1 group-hover:border-primary transition-colors">
+<div class="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 bg-cover bg-center" data-alt="Professional headshot of James Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3WUWyJZHT-lo3Wt00iCpX0QpIipkx8-iU2h-_WPZyjRiJyYopjk4e9CmGkwuLoAu2Xj9Y-9kj1SN1iTh0yqjwi88PU-eukpT5WrTo1VhyNxgx9x9UQQWrvrIlpbkXkscRitHRBLoUnhOY-4ZGtZ6H1U-PpaGP6rLKNpOcwh6Mxx9ld--kK42ITMtX57s-Lqfi_Z8F5u2L_3H8DCrEnW5C3yXlhr5JWb6nR4smb_LNh1uG-zxyTnrEHFEULkxNm7iiB0Gix7AFoMs')"></div>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-slate-300 dark:bg-slate-600 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold truncate w-28">James Chen</p>
+<p class="text-xs text-slate-500">Data Science</p>
+</div>
+</div>
+<!-- Mentor Card 4 -->
+<div class="flex-shrink-0 w-32 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="relative">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 p-1 group-hover:border-primary transition-colors">
+<div class="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 bg-cover bg-center" data-alt="Professional headshot of Anita Ray" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCar57t7pVCrdUU5syv-IvPSIo0Sgfm1_GQiVreJ_jaazdJd5GR8-JAp7uHbgmzt-yWU-8Ovq7k0h0L0L8JGOxjBPAYGxJfcewEuBhIvCbqsOcL5M3QJdSEriuRg0uB4BHI5fNkkZUFxRzelGWKQcaXoYphS7RYDV9JXGDt2YdN5epgECdhdR8S9wWRZ3WWGJoCh-WboaPhIdBLAWjKLjuSLQdsLBQozeUS8sGvAmmXeHOfO__iZ5OLkJGB-89Va-I58w7fPGkfQo8')"></div>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="text-center">
+<p class="text-sm font-bold truncate w-28">Anita Ray</p>
+<p class="text-xs text-slate-500">Software Eng</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Chats List -->
+<section class="space-y-4">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Recent Conversations</h3>
+<div class="divide-y divide-primary/5">
+<!-- Chat Item 1 (Unread) -->
+<div class="flex gap-4 py-4 cursor-pointer hover:bg-primary/5 transition-colors rounded-xl px-2 -mx-2">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Mentor Marcus headshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfZbZ_gVUyZJiuAsI8WpjVPrwx1GgDnkZ4Z_sKkwjjcpbOZIJZeCRjfCo8SIQ51beesZUnZFjb9bjFgeF8UtSqdv35tjL1l1w0RBqN15oCZtWl_Sd4qsz6apWSaVbZVMCf93v-ulSPsUg525CggDqfUU2_1VIayf-OJV3sDWv0T4UVQ-pQdVB9uI6RWdpTbPFHyflwfXRRPNrvVqCI8ixrlqRz0LXKzKfdIyo-B_KjJ3pH3rvbhZnMw1WUkW22F1QhzKViTOofn1Q')"></div>
+<div class="absolute top-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-base font-bold truncate">Marcus Thorne <span class="ml-1 text-xs font-normal text-slate-500">• Product Manager</span></h4>
+<span class="text-[10px] text-primary font-bold">2m ago</span>
+</div>
+<p class="text-sm text-slate-900 dark:text-slate-100 font-semibold truncate">I've reviewed your latest wireframes. Let's discuss the flow...</p>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+<span class="text-[10px] text-white font-bold tracking-tighter">2</span>
+</div>
+</div>
+</div>
+<!-- Chat Item 2 -->
+<div class="flex gap-4 py-4 cursor-pointer hover:bg-primary/5 transition-colors rounded-xl px-2 -mx-2">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Mentor Elena headshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTz6SwIxMdjuYOa84dmiuAnLjPUBlbU6YrFWa-hXb5z3P0fiiB4MyrVib1f4eGpm6nG8-_jvu2Qrlpy60Wb3o-O8vsmYw_XdaQ0sxZtd4k-dZyloMt-6J3zOynyQ2eEZhXBI3pTwWpwuABRCocIkfrkPQQpFXUiY2dwR-qDn1xMoMZ7r7tQS4gT6hQ0kdEROwJYCifA3qbgvSl36kr-PAPaIAwyiqpPrpo55q5n84NbLyVZqRBpgfO3_eTB8xSaFYmpIgEpEwVVig')"></div>
+<div class="absolute top-0 right-0 w-3.5 h-3.5 bg-slate-400 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-base font-bold truncate">Elena Rodriguez <span class="ml-1 text-xs font-normal text-slate-500">• Frontend Lead</span></h4>
+<span class="text-[10px] text-slate-400">1h ago</span>
+</div>
+<p class="text-sm text-slate-500 truncate">That CSS architecture looks much cleaner now. Great work!</p>
+</div>
+</div>
+<!-- Chat Item 3 -->
+<div class="flex gap-4 py-4 cursor-pointer hover:bg-primary/5 transition-colors rounded-xl px-2 -mx-2">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Mentor David headshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsC3lPvC8qbO2lR0RbpP0yhXXH-se3p7VD0_w3gOoMIyFzqerVyglNzU_O5UI-rtLv9Sga6I_zIvl6dy_pmD_GmlpAyCLTubqO1KSJDjMnaqSPWrlGoJ-1CcbO6-HMgmf1CQJYTiyDqlKy-3uQEMQj1N2bzCe6QUFAvJh9sH7NEzGW-hBAaJY-TDQ_Qk9Lv1xbiyILnsSu1p05h8PahBahcihYLCDq5tvgnz6qUyvliZVCovUrbYN2NOXy5sI0YIAlahfblpzjmTI')"></div>
+<div class="absolute top-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-base font-bold truncate">David Kim <span class="ml-1 text-xs font-normal text-slate-500">• Data Scientist</span></h4>
+<span class="text-[10px] text-slate-400">Yesterday</span>
+</div>
+<p class="text-sm text-slate-500 truncate">You: Thanks for the feedback on the linear regression model.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-primary/10 px-4 pb-safe">
+<div class="max-w-2xl mx-auto flex justify-around py-2">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-medium">Mentors</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">chat_bubble</span>
+<span class="text-[10px] font-medium">Chat</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</footer>
+</body></html>

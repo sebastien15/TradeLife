@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmation - Air Kiribati</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .ticket-cutout {
+            position: relative;
+        }
+        .ticket-cutout::before, .ticket-cutout::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #112121; /* Matches background-dark */
+            border-radius: 50%;
+            top: 72%;
+            transform: translateY(-50%);
+        }
+        .ticket-cutout::before { left: -10px; }
+        .ticket-cutout::after { right: -10px; }
+        
+        .dashed-line {
+            border-top: 2px dashed rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<!-- Header Navigation -->
+<header class="w-full max-w-md flex items-center justify-between p-4">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold">Booking Confirmed</h1>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<main class="w-full max-w-md px-4 pb-24 flex flex-col gap-6">
+<!-- Success Animation Area -->
+<div class="flex flex-col items-center justify-center py-6 gap-3">
+<div class="size-20 bg-primary/20 rounded-full flex items-center justify-center relative">
+<div class="size-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-white text-4xl">check</span>
+</div>
+<!-- Subtle decorative rings -->
+<div class="absolute inset-0 border-2 border-primary/30 rounded-full scale-125"></div>
+</div>
+<div class="text-center">
+<h2 class="text-2xl font-bold tracking-tight">Success!</h2>
+<p class="text-slate-500 dark:text-slate-400">Your flight to Guangzhou is ready</p>
+</div>
+</div>
+<!-- Ticket Card -->
+<div class="ticket-cutout relative w-full bg-primary rounded-xl overflow-hidden shadow-2xl">
+<!-- Ticket Top Section -->
+<div class="p-6 pb-4">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-white/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">flight_takeoff</span>
+</div>
+<span class="text-white font-bold tracking-wider">AIR KIRIBATI</span>
+</div>
+<span class="text-white/70 text-sm font-medium">6I-402</span>
+</div>
+<div class="flex justify-between items-center mb-8">
+<div class="flex flex-col">
+<span class="text-4xl font-black text-white">KGL</span>
+<span class="text-white/60 text-xs">Kigali, Rwanda</span>
+</div>
+<div class="flex flex-col items-center grow px-4">
+<div class="w-full flex items-center gap-2">
+<div class="size-2 bg-white rounded-full"></div>
+<div class="h-[2px] grow bg-gradient-to-r from-white/40 to-white/10 relative">
+<span class="material-symbols-outlined text-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl">flight</span>
+</div>
+<div class="size-2 border-2 border-white rounded-full"></div>
+</div>
+<span class="text-white/50 text-[10px] mt-2 tracking-[0.2em]">NON-STOP</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-4xl font-black text-white">CAN</span>
+<span class="text-white/60 text-xs">Guangzhou, China</span>
+</div>
+</div>
+<!-- Info Grid -->
+<div class="grid grid-cols-2 gap-y-6 gap-x-4">
+<div>
+<p class="text-white/50 text-[10px] uppercase tracking-widest font-bold">Passenger</p>
+<p class="text-white font-semibold">Alex Johnson</p>
+</div>
+<div class="text-right">
+<p class="text-white/50 text-[10px] uppercase tracking-widest font-bold">Date</p>
+<p class="text-white font-semibold">24 Oct 2023</p>
+</div>
+<div>
+<p class="text-white/50 text-[10px] uppercase tracking-widest font-bold">Gate / Boarding</p>
+<p class="text-white font-semibold">B12 / 13:45</p>
+</div>
+<div class="text-right">
+<p class="text-white/50 text-[10px] uppercase tracking-widest font-bold">Seat</p>
+<p class="text-white font-semibold">12A (Window)</p>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="px-6 py-4 flex items-center justify-center">
+<div class="dashed-line w-full"></div>
+</div>
+<!-- Ticket Bottom Section (QR) -->
+<div class="p-6 pt-2 flex flex-col items-center gap-4 bg-primary/40 backdrop-blur-sm">
+<div class="bg-white p-3 rounded-lg shadow-inner">
+<img alt="Boarding Pass QR Code" class="size-32" data-alt="A clean black and white QR code for flight boarding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB73_nCeIpFV6nizcH-EJ1eshHLRfdReqlJauUTL1RIAnBgOdL0a54hNz9U_LfPlTz6K41Pp1k9tlj8iIRUOS92o8iO85cZCI9lwoYRufUnQcYrKA-fvXlZcKz-SF-aLo88fphi-kJeQZgNlQSzmrru_V4hE_PkbrZX3yuhNPKznZyNoFS5Ld9q1HI5CV7HYWXzC6ciq7NCm9B_1Jqprx5KbUOZ2iEdqM4osSLppP2jAhL-9rBeOrPi8QIRrhwhxQTDibN-kkN4buw"/>
+</div>
+<p class="text-white/60 text-[10px] tracking-widest uppercase">Scan at gate B12</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 mt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                Save to Apple Wallet
+            </button>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary/10 hover:bg-primary/20 text-primary dark:text-slate-100 font-semibold py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-xl">share</span>
+                    Share Receipt
+                </button>
+<button class="px-5 bg-primary/10 hover:bg-primary/20 text-primary dark:text-slate-100 font-semibold py-4 rounded-xl flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-xl">download</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full max-w-md border-t border-slate-200 dark:border-primary/20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-slate-100" href="#">
+<span class="material-symbols-outlined fill-1">confirmation_number</span>
+<span class="text-[10px] font-medium">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

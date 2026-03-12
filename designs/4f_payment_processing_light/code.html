@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Processing - Workflow 4</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 2s linear infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-primary/20">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">close</span>
+</button>
+<h2 class="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-primary/60">WORKFLOW 4 — MONEY</h2>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Area: Centered Spinner -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 text-center">
+<div class="relative flex items-center justify-center mb-8">
+<!-- Background Ring -->
+<div class="absolute w-32 h-32 rounded-full border-4 border-slate-200 dark:border-primary/10"></div>
+<!-- Animated Spinner Segment -->
+<div class="absolute w-32 h-32 rounded-full border-4 border-transparent border-t-primary animate-spin-slow"></div>
+<!-- Center Icon -->
+<span class="material-symbols-outlined text-4xl text-primary">account_balance</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Processing Payment...</h1>
+<p class="text-slate-500 dark:text-slate-400 max-w-xs mx-auto">
+            Please do not close the app or refresh the page while we secure your transaction.
+        </p>
+</main>
+<!-- Transaction Preview Card / Stepper -->
+<section class="p-4 @container">
+<div class="bg-white dark:bg-primary/10 border border-slate-200 dark:border-primary/20 rounded-xl shadow-lg overflow-hidden">
+<!-- Transaction Brief -->
+<div class="p-4 border-b border-slate-100 dark:border-primary/20 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center overflow-hidden">
+<img alt="Recipient Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6DQSdJg7tr_W0UgGD3lPqC-aGXgZgb0irVP8xdOFdmCPzkCLfxvqtCpkPPgHWZaJjFvLFX59HVsukR81od7fU3tI3ZOmprCrx8rW-0Y0ZlZLXwOyfIaUp8BlNtA5tqdaBYMyPmbBCWheFT8c81XBHzX1yPzuPbh5k5NQasH_xyKj8kenJJhkgzTv55tzVHor_UmphD21x6lUmV8SLTy1vMA-P3PvjIYGuh3kRsbfj9Qqcb078YL662W_UEWd1_WYxpwonHjs7g-U"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">$250.00 to Jane Doe</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Transaction ID: #882910</p>
+</div>
+</div>
+<!-- Vertical Stepper -->
+<div class="p-6 space-y-6">
+<!-- Step 1: Authorized -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+<div class="w-0.5 h-10 bg-primary"></div>
+</div>
+<div class="pb-2">
+<p class="font-semibold text-slate-900 dark:text-slate-100 leading-none mb-1">Authorized</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Verified and secured by your bank</p>
+</div>
+</div>
+<!-- Step 2: Processing (Active) -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center bg-primary/10">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+</div>
+<div class="w-0.5 h-10 bg-slate-200 dark:bg-primary/20"></div>
+</div>
+<div class="pb-2">
+<p class="font-semibold text-primary leading-none mb-1">Processing</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Communicating with bank servers...</p>
+</div>
+</div>
+<!-- Step 3: Sent -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full border-2 border-slate-200 dark:border-primary/20 flex items-center justify-center">
+</div>
+</div>
+<div class="pb-2">
+<p class="font-semibold text-slate-400 dark:text-slate-600 leading-none mb-1">Sent</p>
+<p class="text-sm text-slate-400 dark:text-slate-600">Funds moving to recipient</p>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-1.5 w-full bg-slate-100 dark:bg-primary/10">
+<div class="h-full bg-primary" style="width: 65%;"></div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Bar -->
+<nav class="mt-auto border-t border-slate-200 dark:border-primary/20 bg-white dark:bg-background-dark/80 backdrop-blur-md px-4 pb-6 pt-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary/40 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-primary/40">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">swap_horiz</span>
+<span class="text-[10px] font-bold text-primary">Payments</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary/40 group-hover:text-primary transition-colors">credit_card</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-primary/40">Cards</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary/40 group-hover:text-primary transition-colors">show_chart</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-primary/40">Wealth</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-primary/40 group-hover:text-primary transition-colors">more_horiz</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-primary/40">More</span>
+</a>
+</nav>
+</body></html>

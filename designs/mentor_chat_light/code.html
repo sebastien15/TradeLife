@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentor Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 dark:border-primary/20 px-4 py-3">
+<div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-1 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-slate-100">arrow_back</span>
+</button>
+<div class="relative">
+<div class="size-10 rounded-full bg-primary/20 bg-cover bg-center overflow-hidden" data-alt="Professional headshot of a female design mentor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRL8cT3mpapRTghwNyiTXqajroGa-xzHUsc2qiXYQ_djT6ZpYhAHKFmp6J4FLoaCVlrYdV8H_WawOTdILzvMR9fVPioeXhiTB2wnEudm7xdTS3s3HsWwoGFl4vIyFACdnN8yzLUzSihuBZqRD2GOvrZOeiMKKNukOIs0m92AIXF0GhBWpjn31uBY__TP1JxNOXwZzwF0I60yLbiB5bhCa07nz6vVwIDaS88dJ6mGfxZE4PN-2vh-29EX48fMTW4ghlRneB9dpj-ZQ')">
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-emerald-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-sm font-bold leading-tight">Sarah Jenkins</h1>
+<span class="text-[11px] text-primary/70 dark:text-primary/50 font-medium">Online</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-slate-100">call</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-slate-100">videocam</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-slate-100">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Chat Area -->
+<main class="flex-1 max-w-4xl w-full mx-auto px-4 py-6 flex flex-col gap-6 overflow-y-auto">
+<!-- Date Divider -->
+<div class="flex justify-center">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-primary/10 px-3 py-1 rounded-full">Today</span>
+</div>
+<!-- Received Message -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="size-8 shrink-0 rounded-full bg-primary/20 bg-cover bg-center" data-alt="Small profile avatar of Sarah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzwLo8sj2avjelF3QAbkRa2iLtIrxNRX4MPOID2llHu_lj3EczsOy799pft5h-dSpM5P2UomVVPZ_xaSOIBIKicp4Bbmx_nZU1fzach_fxs5XaTaWxRsA4VfR58iBIjChCsVsg-YGT5HXaM2N6vttnUv5Xhx6PvCzkzhew6XW_ArWX8OMSU2xbZt95oi8kfBGqP5Bi9897Ff7Jht8DKFk7T3Wzqo79JnruKYc0cmYmP5gyVVx55kO2jVy0h8ttRPsFTd0pNG6cpU4')">
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-white dark:bg-primary/20 text-slate-900 dark:text-slate-100 p-3 rounded-xl rounded-bl-none shadow-sm border border-slate-200 dark:border-primary/30">
+<p class="text-sm leading-relaxed">Hello! I just reviewed your portfolio updates. The new case studies look much more professional.</p>
+</div>
+<span class="text-[10px] text-slate-400 ml-1">10:24 AM</span>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex items-end gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="size-8 shrink-0 rounded-full bg-primary bg-cover bg-center" data-alt="Small profile avatar of user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJs7JJpYl2Z7_fpaV9GtH4UHJMCDdeJkRL6WDw3e5lzJXCsixuLCnb1xc_DjaaLVlIZbbXd8eahuZJI2w359Z7myQFWFU3E7qazs-5AGUOKiAxHdLa2oRWgCyqBvJsWXWpfWZbe11C731MFLAPZ8hw9aJyh1xzq__xT4MpIL14rwAYeCnHX1Uw-9vftzSQ-cRPhLygXwiL6eYUO5yfX7WlncB4pDzkeABgnsP26DxdvajG0OokFJfikDJ13CkDB1Nad9z_eZ-DlXI')">
+</div>
+<div class="flex flex-col gap-1 items-end">
+<div class="bg-primary text-white p-3 rounded-xl rounded-br-none shadow-md">
+<p class="text-sm leading-relaxed">Thank you, Sarah! I really focused on the problem statement this time. Did the layout work for you?</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-slate-400">10:26 AM</span>
+<span class="material-symbols-outlined text-[14px] text-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Received Message with Attachment -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="size-8 shrink-0 rounded-full bg-primary/20 bg-cover bg-center" data-alt="Small profile avatar of Sarah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9F7Vg41_p1AC2mMzqTZReM62SoIi3HCRPgK0Aut-2ggehVKZczVkF8R1M4Xrv9r1StSwZoZQtH6u6GF5G_hyws7BUTMqwd_1s8iDsQEdEdMAEmtUe0iIoCVvk1IXh84AK9725J8M7Acnk_ygu3DJqrQC7OzhOASdzKhhKlcdnzAFJYpbaD2KlXvnGYzIgsTX8m1_62rIDxqDhevsSrUfargDCvCncziQSxxEtw3LCWlkqubahhGPOZKkWS835aH3hwWmesaZj2y4')">
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-white dark:bg-primary/20 text-slate-900 dark:text-slate-100 p-3 rounded-xl rounded-bl-none shadow-sm border border-slate-200 dark:border-primary/30">
+<p class="text-sm leading-relaxed mb-3">It did! I've annotated a few areas for improvement. Check out this PDF for detailed feedback.</p>
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-primary/30 rounded-lg border border-slate-100 dark:border-primary/20">
+<div class="size-10 bg-red-100 dark:bg-red-900/30 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold truncate">portfolio_feedback.pdf</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400">1.2 MB • PDF Document</p>
+</div>
+<button class="p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-primary text-sm">download</span>
+</button>
+</div>
+</div>
+<span class="text-[10px] text-slate-400 ml-1">10:30 AM</span>
+</div>
+</div>
+<!-- Sent Message (Typing/Pending) -->
+<div class="flex items-end gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="size-8 shrink-0 rounded-full bg-primary bg-cover bg-center" data-alt="Small profile avatar of user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7RIcTdyGdJGp7WZ7-qB8s4_B3JNHPSGVHl3SPQWAhtH9tZI7Z6MweKjlgRdHA4hY3CMN8IGOutnQW_1il3idVbJI90O6qEC9kWlYJH-6sGMvlNrpyPewBTFr_X8VLFOoNshplztwKK-gGLivPty3QcHxHNwoEAOaeM7axSy0ubRfeCx8uQeg8RmaXp1KLl6zdXYpxKDigXKsmMaHeuuCnIOkIvWQPiIYVWGhQuiW6nSUUg3zsK4tel0ML3DwjGS4-0GTB9vgvoXQ')">
+</div>
+<div class="flex flex-col gap-1 items-end">
+<div class="bg-primary text-white p-3 rounded-xl rounded-br-none shadow-md">
+<p class="text-sm leading-relaxed">Perfect, downloading it now! Can we jump on a quick call to discuss the navigation section later today?</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-slate-400">Just now</span>
+<span class="material-symbols-outlined text-[14px] text-slate-300">done</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Input Bar -->
+<footer class="bg-white dark:bg-background-dark border-t border-primary/10 dark:border-primary/20 p-4">
+<div class="max-w-4xl mx-auto flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">photo_camera</span>
+</button>
+<div class="flex-1 relative flex items-center">
+<input class="w-full bg-slate-100 dark:bg-primary/10 border-none rounded-full py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary placeholder-slate-400 dark:text-slate-100" placeholder="Message..." type="text" value="That sounds great, thanks!"/>
+<button class="absolute right-2 p-1 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+</div>
+<button class="size-10 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TradeLife Security Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="w-full max-w-md mx-auto flex-1 flex flex-col bg-background-light dark:bg-background-dark shadow-xl overflow-hidden">
+<!-- Header Workflow Label -->
+<div class="px-4 pt-4 pb-2">
+<p class="text-primary dark:text-primary/80 text-[10px] font-bold tracking-widest uppercase">WORKFLOW 8 — SETTINGS &amp; ERRORS</p>
+</div>
+<!-- Navigation Header -->
+<div class="flex items-center p-4 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex items-center justify-center p-2 hover:bg-slate-200 dark:hover:bg-surface-dark rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Security Settings</h2>
+<button class="text-slate-900 dark:text-slate-100 flex items-center justify-center p-2 hover:bg-slate-200 dark:hover:bg-surface-dark rounded-full transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<!-- Account Health Card -->
+<div class="p-4">
+<div class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden shadow-lg bg-surface-dark border border-slate-800">
+<!-- Score Card Gradient -->
+<div class="w-full h-32 bg-gradient-to-br from-[#0b4c4c] to-[#122121] flex items-center justify-center relative overflow-hidden" data-alt="Abstract teal and dark green geometric gradient pattern">
+<div class="absolute inset-0 opacity-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px]">verified_user</span>
+</div>
+<div class="relative z-10 text-center">
+<span class="text-4xl font-bold text-white">85%</span>
+<p class="text-xs text-slate-300 font-medium">Security Score</p>
+</div>
+</div>
+<div class="flex w-full flex-col gap-2 p-4">
+<p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Account Health</p>
+<p class="text-white text-lg font-bold">Status: Strong</p>
+<div class="flex flex-col gap-3">
+<p class="text-slate-400 text-sm leading-relaxed">Your account is well protected. Enable biometric login to reach 100% security coverage.</p>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                            Improve Score
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Sections -->
+<div class="flex-1 space-y-6 pb-24">
+<!-- Login & Auth Section -->
+<section>
+<h3 class="px-4 mb-2 text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Login &amp; Authentication</h3>
+<div class="bg-surface-dark divide-y divide-slate-800 border-y border-slate-800">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">password</span>
+<div>
+<p class="text-sm font-medium">Change Password</p>
+<p class="text-xs text-slate-500">Last updated 3 months ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">security</span>
+<div>
+<p class="text-sm font-medium">Two-Factor Auth</p>
+<p class="text-xs text-emerald-500">Enabled • Authenticator App</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<div>
+<p class="text-sm font-medium">Biometric Login</p>
+<p class="text-xs text-slate-500">Use FaceID or TouchID</p>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy Section -->
+<section>
+<h3 class="px-4 mb-2 text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Privacy &amp; Privacy</h3>
+<div class="bg-surface-dark divide-y divide-slate-800 border-y border-slate-800">
+<div class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">devices</span>
+<div>
+<p class="text-sm font-medium">Active Sessions</p>
+<p class="text-xs text-slate-500">3 devices currently logged in</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">history</span>
+<div>
+<p class="text-sm font-medium">Security Logs</p>
+<p class="text-xs text-slate-500">View recent login activities</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t border-slate-800 bg-surface-dark px-4 pb-6 pt-2 flex gap-2 z-50">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<p class="text-[10px] font-medium">Trade</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-[10px] font-medium">Assets</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-[10px] font-medium">Social</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+<p class="text-[10px] font-bold">Settings</p>
+</a>
+</div>
+</div>
+</body></html>

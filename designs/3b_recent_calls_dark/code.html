@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workflow 3 - Recent Calls</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .iphone-frame {
+            width: 393px;
+            height: 852px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #333;
+            border-radius: 55px;
+            background: #121212;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .dynamic-island {
+            width: 120px;
+            height: 35px;
+            background: black;
+            border-radius: 20px;
+            margin: 10px auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-200 dark:bg-slate-950 flex items-center justify-center min-h-screen">
+<!-- iPhone 14 Pro Container -->
+<div class="iphone-frame bg-background-dark text-slate-100 flex flex-col">
+<!-- Dynamic Island -->
+<div class="dynamic-island"></div>
+<!-- Header Content -->
+<div class="pt-14 px-6">
+<p class="text-[12pt] font-medium text-[#9CA3AF] tracking-wide uppercase">WORKFLOW 3 — CALLING</p>
+<div class="flex items-center justify-between mt-6">
+<h1 class="text-3xl font-bold tracking-tight text-slate-100">Recents</h1>
+<button class="bg-surface-dark p-2 rounded-full text-primary">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="flex mt-6 bg-surface-dark rounded-xl p-1">
+<button class="flex-1 py-1.5 text-sm font-semibold rounded-lg bg-primary text-white">All</button>
+<button class="flex-1 py-1.5 text-sm font-semibold text-slate-400">Missed</button>
+</div>
+</div>
+<!-- Recent Calls List -->
+<div class="flex-1 overflow-y-auto mt-4 px-4 space-y-1">
+<!-- Call Row (Missed) -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-dark transition-colors group">
+<div class="relative">
+<img alt="User Avatar" class="w-12 h-12 rounded-full bg-slate-800" data-alt="Profile picture of a smiling man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTtAs5NxTOuaGJxHefuDs_K7ZTAqfNYtPl-N71w_TIx3xC2Acc_AdkWnn09klXeOYjJiROrpb42gpae2KZA3Sxbkba196c_KollISRV1EFQfg-jd5BlfAC1tLM5qK1lX0PZTRQwRyoEyzkq5WDH8I0kBvLx0ZyWago6dBh5wWgv3-Hoyz5NMCM0Rog0BlHIJrMsfXhgwFYyU6MDGFpBnMKP2KqlrIhKA4f1URcpqe8DPQ5WvvsYvMGq0HLtKCotDOiJrgxEXW7IMo"/>
+<div class="absolute -bottom-1 -right-1 bg-red-500 w-4 h-4 rounded-full border-2 border-background-dark"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-red-500">John Doe</h3>
+<span class="text-xs text-slate-500">10:45 AM</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-xs">phone_callback</span>
+<span>Missed Call</span>
+</div>
+</div>
+<button class="text-slate-500 group-hover:text-primary p-2">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="h-px bg-slate-800/50 mx-4"></div>
+<!-- Call Row (Outgoing) -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-dark transition-colors group">
+<div class="relative">
+<img alt="User Avatar" class="w-12 h-12 rounded-full bg-slate-800" data-alt="Profile picture of a woman with long dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1TzuIqYfvPK7U0Qk28V7YXfPwvMxhpWr-T6-c_W87eKoJjbibUPxVat8ox2kyIu6kM3J5nHBnGtHxjAwfEo4kEgwb30mZhPD25Nm4bRhN3ITylsgIs2uzLGQyGOjmuLLHQwGvNV7hqPGTILbMDsfTkvYTi59NW15ryB4vAvpfQe6p3rDwmINc-JQDsriE7SNK7Sh5v4kH2yAojzDD_x0awaAMZM6ezp-ECgJYV1gh1glkqbn3PCVCAcREUbZ2W00t7eX1d2PN7ZU"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-100">Jane Smith</h3>
+<span class="text-xs text-slate-500">Yesterday</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-xs">call_made</span>
+<span>Mobile</span>
+</div>
+</div>
+<button class="text-slate-500 group-hover:text-primary p-2">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="h-px bg-slate-800/50 mx-4"></div>
+<!-- Call Row (Unknown Incoming) -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-dark transition-colors group">
+<div class="w-12 h-12 rounded-full bg-surface-dark flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-100">+1 (555) 0123</h3>
+<span class="text-xs text-slate-500">Tuesday</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-xs">call_received</span>
+<span>Unknown Location</span>
+</div>
+</div>
+<button class="text-slate-500 group-hover:text-primary p-2">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="h-px bg-slate-800/50 mx-4"></div>
+<!-- Call Row (Outgoing) -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-dark transition-colors group">
+<div class="relative">
+<img alt="User Avatar" class="w-12 h-12 rounded-full bg-slate-800" data-alt="Profile picture of a man with a beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEGFPFHWUPPKCO60nibj_6MKLKAU4ga-ifWFsGILsyDeKP4YNpbRIwrfrlq4H2z57pro-pNAhtR7-v_KGt69Zv8bE4ujC5uMhhbjlXySZh9tic4W2jVCaRPCk1Zvk729I6ce9EjUrr4E4UehtVFyDr5ltJo0TBXsR98SicmG60UWXXtAZl8Ro8cKm_BuIM0Jy73Lhf_atQbCwGEBRj_OUmCjbM8aUX75CELuW_jN03h-2IV761wHNcIfMoiH8GGrtvY730Wg4r6E4"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-100">Robert Fox</h3>
+<span class="text-xs text-slate-500">2 days ago</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-xs">call_made</span>
+<span>Work</span>
+</div>
+</div>
+<button class="text-slate-500 group-hover:text-primary p-2">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="h-px bg-slate-800/50 mx-4"></div>
+<!-- Call Row (Incoming) -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-dark transition-colors group">
+<div class="relative">
+<img alt="User Avatar" class="w-12 h-12 rounded-full bg-slate-800" data-alt="Profile picture of a young woman with a ponytail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6oDow1VZEwzZ18aYJyMD1ny6Fdc8NZlJcYOYFtTvCcx5Y8M6hcxmByWWGDDqPIpwGl6et2tfKFFPsFeZRDzVW4NchxscAAYnAvJR-kBrRp7_9fuOHDQH4Fw5NTD7tDWNsGitBN2zOjPJr5Ohztmdleej1QxjJzmtrM37_EZ-3aihZWRS6U0vgUL1pfctasalCuzncs5-_iYBdri2O3miTRBhEVqBWM1rk8bMnC8KsZCdnxC6CvexKAwiXRDfpH5hstGx7WH_6NB4"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-slate-100">Emily Davis</h3>
+<span class="text-xs text-slate-500">Last week</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined text-xs">call_received</span>
+<span>Mobile</span>
+</div>
+</div>
+<button class="text-slate-500 group-hover:text-primary p-2">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+</div>
+<!-- Navigation Bar -->
+<div class="bg-surface-dark/80 backdrop-blur-md border-t border-slate-800 px-6 pb-8 pt-3">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="text-[10px] font-medium">Favorites</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">schedule</span>
+<span class="text-[10px] font-medium">Recents</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Contacts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">dialpad</span>
+<span class="text-[10px] font-medium">Keypad</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">voicemail</span>
+<span class="text-[10px] font-medium">Voicemail</span>
+</a>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full"></div>
+</div>
+</body></html>

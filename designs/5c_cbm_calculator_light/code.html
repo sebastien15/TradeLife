@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CBM Calculator - Shipping &amp; Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-4">
+<div class="max-w-md mx-auto flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 transition-colors text-primary dark:text-slate-100">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h3 class="text-xl font-bold tracking-tight text-primary dark:text-slate-100">CBM Calculator</h3>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 py-6 pb-32">
+<!-- Instructions -->
+<div class="mb-8">
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Calculate volume for accurate shipping quotes</p>
+</div>
+<!-- Item Rows Container -->
+<div class="space-y-6">
+<!-- Item Row 1 -->
+<div class="bg-white dark:bg-primary/10 p-4 rounded-xl shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-primary/60 dark:text-slate-400">Item 01</span>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">L (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number" value="50"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">W (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number" value="50"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">H (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number" value="50"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">Qty</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number" value="1"/>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex justify-end items-center">
+<span class="text-xs text-slate-500 dark:text-slate-400 mr-2">Volume:</span>
+<span class="text-sm font-bold text-primary dark:text-slate-100">0.125 CBM</span>
+</div>
+</div>
+<!-- Item Row 2 (Empty Example) -->
+<div class="bg-white dark:bg-primary/10 p-4 rounded-xl shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-primary/60 dark:text-slate-400">Item 02</span>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">L (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">W (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">H (cm)</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-300 ml-1">Qty</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-primary/30 rounded-lg h-12 px-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex justify-end items-center">
+<span class="text-xs text-slate-500 dark:text-slate-400 mr-2">Volume:</span>
+<span class="text-sm font-bold text-primary dark:text-slate-100">0.000 CBM</span>
+</div>
+</div>
+<!-- Add Item Button -->
+<button class="w-full py-4 border-2 border-dashed border-primary/30 rounded-xl flex items-center justify-center gap-2 text-primary dark:text-slate-300 hover:bg-primary/5 transition-colors font-medium">
+<span class="material-symbols-outlined">add_circle</span>
+                Add Another Item
+            </button>
+</div>
+</main>
+<!-- Results Section & Sticky Bottom Footer -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-primary/10">
+<div class="max-w-md mx-auto space-y-4">
+<!-- Summary Card -->
+<div class="bg-primary p-5 rounded-xl text-white shadow-xl shadow-primary/20">
+<div class="flex justify-between items-end mb-1">
+<p class="text-primary/70 dark:text-white/70 text-sm font-medium">Total Volume</p>
+<p class="text-primary/70 dark:text-white/70 text-sm font-medium">Est. Weight</p>
+</div>
+<div class="flex justify-between items-baseline">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold tracking-tight">15.5</span>
+<span class="text-sm font-medium opacity-80">CBM</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-semibold">2,325</span>
+<span class="text-xs font-medium opacity-80">kg</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-1 gap-3">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg hover:brightness-110 active:scale-[0.98] transition-all">
+                    Get Exact Quotes
+                </button>
+<button class="w-full bg-transparent border-2 border-primary text-primary dark:text-slate-100 font-bold py-3.5 rounded-xl hover:bg-primary/5 active:scale-[0.98] transition-all">
+                    Save Calculation
+                </button>
+</div>
+</div>
+</div>
+</body></html>

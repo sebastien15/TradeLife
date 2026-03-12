@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Wizard - Step 1: Documents</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header & Navigation -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 dark:border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-xl mx-auto w-full">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Step 1: Document Upload</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-4 bg-background-light dark:bg-background-dark">
+<div class="flex flex-col items-center gap-1">
+<div class="h-2 w-12 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Docs</span>
+</div>
+<div class="h-2 w-12 rounded-full bg-slate-300 dark:bg-primary/20"></div>
+<div class="h-2 w-12 rounded-full bg-slate-300 dark:bg-primary/20"></div>
+<div class="h-2 w-12 rounded-full bg-slate-300 dark:bg-primary/20"></div>
+</div>
+</header>
+<main class="flex-1 max-w-xl mx-auto w-full px-4 pb-24">
+<div class="pt-6 pb-2">
+<h3 class="text-2xl font-bold leading-tight mb-2">Required Documents</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                Please upload high-quality scans or photos (PDF, JPG, PNG). Max file size 5MB per document.
+            </p>
+</div>
+<div class="space-y-4 mt-6">
+<!-- Uploading State Item -->
+<div class="p-4 rounded-xl border border-primary bg-primary/5 dark:bg-primary/10">
+<div class="flex items-start justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-semibold text-sm">Passport</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Bio-page scan (Full page)</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-primary font-medium italic">Uploading...</span>
+<span class="text-primary font-bold">65%</span>
+</div>
+<div class="w-full bg-primary/20 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<!-- Pending Item: Photo -->
+<div class="p-4 rounded-xl border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<div>
+<h4 class="font-semibold text-sm">Digital Photo</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">White background, 35x45mm</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold py-1.5 px-4 rounded-lg hover:brightness-110">
+                        Upload
+                    </button>
+</div>
+</div>
+<!-- Pending Item: Invitation Letter -->
+<div class="p-4 rounded-xl border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="font-semibold text-sm">Invitation Letter</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Official host letter (PDF/JPG)</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold py-1.5 px-4 rounded-lg hover:brightness-110">
+                        Upload
+                    </button>
+</div>
+</div>
+<!-- Pending Item: Bank Statement -->
+<div class="p-4 rounded-xl border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<h4 class="font-semibold text-sm">Bank Statement</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Last 3 months' activity</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold py-1.5 px-4 rounded-lg hover:brightness-110">
+                        Upload
+                    </button>
+</div>
+</div>
+<!-- Pending Item: Company Letter -->
+<div class="p-4 rounded-xl border border-slate-200 dark:border-primary/20 bg-white dark:bg-primary/5 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-primary p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div>
+<h4 class="font-semibold text-sm">Company Letter</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Employment verification</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold py-1.5 px-4 rounded-lg hover:brightness-110">
+                        Upload
+                    </button>
+</div>
+</div>
+<!-- Support Link -->
+<div class="text-center py-4">
+<a class="text-xs text-primary font-semibold flex items-center justify-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+                    View document requirements guide
+                </a>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation / Action Area -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 px-4 pt-4 pb-6 z-20">
+<div class="max-w-xl mx-auto w-full">
+<button class="w-full bg-primary/20 text-primary/50 cursor-not-allowed font-bold py-4 rounded-xl transition-all mb-4" disabled="">
+                Continue to Step 2
+            </button>
+<nav class="flex justify-between items-center px-2">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">description</span>
+<span class="text-[10px] font-medium">Wizard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-[10px] font-medium">Files</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>

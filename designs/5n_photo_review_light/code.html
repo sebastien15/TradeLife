@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photo Review - Shipping &amp; Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center p-4 max-w-2xl mx-auto w-full">
+<button class="p-2 -ml-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-slate-100">arrow_back</span>
+</button>
+<h3 class="ml-2 text-lg font-bold leading-tight tracking-tight">Review Photos</h3>
+<div class="ml-auto flex gap-2">
+<span class="text-xs font-medium bg-primary/20 text-primary dark:text-primary-light px-2 py-1 rounded">5 of 12</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-2xl mx-auto w-full pb-24">
+<!-- Edge-to-Edge Photo Viewer -->
+<div class="relative w-full aspect-[4/3] bg-black overflow-hidden group">
+<img alt="Stacked folded cotton t-shirts in warehouse" class="w-full h-full object-cover" data-alt="Folded cotton t-shirts in shipping box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-gpDoAvrm_QOtJhHYIs337fRXwOk6gRCsf5-RP-YhCeBX-TgGiVHKC5YVKG9tveOb_-wdiE7AldVRZMSPUYnH_J_i8uwmhT83ZhusX6GBfoAeg06C_1s9aZUCX9KUpku6PXf4KspFq4gBRfp4zg8uIE6C0UB9DZ8Q4ozyHrUxgsbmk06hkA75m8z4Ofi7eXbrlzJSQUHStpB1Tpkb61d0E-P-xiqh7nQH89TFYE5Qhgx0OWHNEBppl-P4i8sAmQnlNkg09MsFpAM"/>
+<!-- Navigation Arrows (Overlay) -->
+<div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-black/40 text-white p-2 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="bg-black/40 text-white p-2 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Swipe Indicator Dots -->
+<div class="absolute bottom-16 left-0 right-0 flex justify-center gap-1.5">
+<div class="h-1.5 w-1.5 rounded-full bg-white"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/40"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/40"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/40"></div>
+</div>
+<!-- Item Summary Bar (Overlaid on Photo) -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-10">
+<p class="text-white text-lg font-bold leading-tight">
+                    Cotton T-Shirts • 198 pcs • 18.4 kg
+                </p>
+</div>
+</div>
+<!-- Warehouse Notes (Yellow Alert Style) -->
+<div class="p-4">
+<div class="flex items-start gap-3 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 dark:bg-amber-900/20">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-400 mt-0.5">warning</span>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-amber-800 dark:text-amber-300">Warehouse Notes</p>
+<p class="text-sm font-medium leading-relaxed text-amber-900 dark:text-amber-100/80">
+                        Minor box denting observed on external corner. Item integrity appears unaffected. Photos 3 and 4 show close-ups of the impact zone.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Assessment Section -->
+<div class="px-4 pb-8">
+<div class="mb-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 dark:text-slate-400">Your Assessment</h4>
+</div>
+<div class="space-y-3">
+<!-- Row 1: Description -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-primary/10 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60">description</span>
+<span class="font-medium">Match Description?</span>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all shadow-md">
+<span class="material-symbols-outlined text-sm">check</span> Yes
+                        </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">close</span> No
+                        </button>
+</div>
+</div>
+<!-- Row 2: Quantity -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-primary/10 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60">inventory_2</span>
+<span class="font-medium">Correct Quantity?</span>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all shadow-md">
+<span class="material-symbols-outlined text-sm">check</span> Yes
+                        </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">close</span> No
+                        </button>
+</div>
+</div>
+<!-- Row 3: Quality -->
+<div class="flex items-center justify-between p-4 bg-white dark:bg-primary/10 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60">verified</span>
+<span class="font-medium">Quality Confirmed?</span>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">check</span> Yes
+                        </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-red-600 text-white text-sm font-bold shadow-md">
+<span class="material-symbols-outlined text-sm">close</span> No
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Action Footer -->
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-primary/10">
+<div class="max-w-2xl mx-auto w-full">
+<button class="w-full flex items-center justify-center gap-2 h-14 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold text-lg transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">done_all</span>
+                Approve — Ready to Ship
+            </button>
+</div>
+</footer>
+</body></html>

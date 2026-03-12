@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Wizard - Payment Step 3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Navigation -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto w-full">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Step 3: Payment</h2>
+<div class="size-10"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<main class="flex-1 max-w-md mx-auto w-full p-4 space-y-6">
+<!-- Progress Section -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-primary font-semibold text-sm uppercase tracking-wider">Application Progress</p>
+<h1 class="text-2xl font-bold">Secure Checkout</h1>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Step 3 of 4</p>
+</div>
+<div class="h-2 w-full bg-primary/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Processing Time Badge -->
+<div class="flex items-center gap-2 px-4 py-3 bg-primary/10 border border-primary/20 rounded-xl">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Estimated Processing Time</p>
+<p class="text-sm font-bold text-primary uppercase">5-7 Business Days</p>
+</div>
+</div>
+<!-- Fee Breakdown Card -->
+<section class="space-y-3">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Fee Summary</h3>
+<div class="bg-white dark:bg-primary/5 border border-primary/10 rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-600 dark:text-slate-300">Visa Application Fee</span>
+<div class="text-right">
+<p class="font-medium">$150.00</p>
+<p class="text-xs text-slate-500">192,200 RWF</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-600 dark:text-slate-300">Service &amp; Processing</span>
+<div class="text-right">
+<p class="font-medium">$10.00</p>
+<p class="text-xs text-slate-500">12,800 RWF</p>
+</div>
+</div>
+<div class="pt-4 border-t border-primary/10 flex justify-between items-center">
+<span class="font-bold text-lg">Total Amount</span>
+<div class="text-right">
+<p class="text-2xl font-black text-primary">$160.00</p>
+<p class="text-sm font-bold opacity-80">205,000 RWF</p>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-center text-slate-400 italic">Exchange rate: 1 USD = 1,281.25 RWF (Market Rate)</p>
+</section>
+<!-- Payment Method Selector -->
+<section class="space-y-3">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Payment Method</h3>
+<div class="space-y-3">
+<!-- Option 1: MoMo -->
+<label class="relative flex items-center p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer transition-all">
+<input checked="" class="hidden" name="payment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="size-12 rounded-lg bg-yellow-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-900 font-bold">smartphone</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Mobile Money (MoMo)</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Pay using MTN or Airtel/Tigo</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</label>
+<!-- Option 2: Card -->
+<label class="relative flex items-center p-4 rounded-xl border border-primary/10 bg-white dark:bg-primary/5 cursor-pointer hover:border-primary/40 transition-all">
+<input class="hidden" name="payment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">credit_card</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Credit / Debit Card</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Visa, Mastercard, Amex</p>
+</div>
+<div class="size-6 rounded-full border border-primary/30"></div>
+</div>
+</label>
+<!-- Option 3: Wallet -->
+<label class="relative flex items-center p-4 rounded-xl border border-primary/10 bg-white dark:bg-primary/5 cursor-pointer hover:border-primary/40 transition-all">
+<input class="hidden" name="payment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">account_balance_wallet</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Visa Wizard Wallet</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Balance: $420.00</p>
+</div>
+<div class="size-6 rounded-full border border-primary/30"></div>
+</div>
+</label>
+</div>
+</section>
+<!-- Security Disclaimer -->
+<div class="flex items-start gap-3 px-2">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-0.5">lock</span>
+<p class="text-[11px] text-slate-500 leading-relaxed">
+                Your payment is secured by industry-standard 256-bit SSL encryption. We do not store your full card details or MoMo pins on our servers.
+            </p>
+</div>
+<div class="h-20"></div> <!-- Bottom Spacer -->
+</main>
+<!-- Bottom Navigation & Action -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-primary/20 z-20">
+<div class="max-w-md mx-auto w-full p-4 space-y-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+<span>Pay $160.00 Now</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<nav class="flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">public</span>
+<span class="text-[10px] font-medium">Visas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium">Status</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</footer>
+</body></html>

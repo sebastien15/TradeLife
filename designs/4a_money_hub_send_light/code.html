@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Money Hub - Send</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center justify-between px-4 h-16">
+<div class="w-10">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+</div>
+<h1 class="text-lg font-bold tracking-tight">Money</h1>
+<div class="w-10 flex justify-end relative">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-background-dark"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Exchange Rate Ribbon -->
+<div class="bg-primary/10 dark:bg-primary/20 border-y border-primary/20 py-2.5 px-4 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Exchange Rate: 1 CNY = 198.45 RWF</p>
+</div>
+<!-- Segmented Control -->
+<div class="px-4 py-6">
+<div class="flex p-1 bg-slate-200 dark:bg-primary/10 rounded-xl">
+<button class="flex-1 py-2.5 text-sm font-bold rounded-lg bg-primary text-white shadow-lg transition-all">
+                    Send
+                </button>
+<button class="flex-1 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                    Receive
+                </button>
+<button class="flex-1 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                    Top-Up
+                </button>
+</div>
+</div>
+<!-- Amount Section -->
+<div class="px-4 space-y-4">
+<div class="bg-white dark:bg-primary/5 rounded-2xl p-6 border border-primary/10 shadow-sm">
+<div class="space-y-6">
+<!-- You Send -->
+<div class="flex items-center justify-between">
+<div class="space-y-1 flex-1">
+<label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">You Send</label>
+<input class="w-full bg-transparent border-none p-0 text-3xl font-bold focus:ring-0 text-slate-900 dark:text-white" type="text" value="5,000"/>
+</div>
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-primary/20 px-3 py-2 rounded-lg cursor-pointer border border-primary/10 hover:border-primary/40 transition-all">
+<img alt="CNY" class="w-6 h-4 object-cover rounded-sm" data-alt="China national flag icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Ew5m7VD7QraxGVwGihT68iYdbQZieMkvZaoSEtXNw6fJIoGf-vYXiBjt2g29qzpn7U1voOEAjtrL10JJ9ouf6d6zK9RPwJbKkRwkH2MwP21SHR6aqW5Cfmwc1Oq9P08e42cGsHNYtCrvYgwRTZUEl11HRc_wXA2peEogwu24vKAAxbYPEbRpg39VqBWW-OJJrNwu8vjjMKIZ1dgnIm7DCMrNkKL6t6qDWBjI4NFhi9EGWEsY0rBgmnhFDIPsfVpcRAzWtFtoXYs"/>
+<span class="font-bold text-sm">CNY</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<!-- Swap Divider -->
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-primary/10"></div>
+</div>
+<button class="relative z-10 bg-primary text-white p-2 rounded-full shadow-xl border-4 border-background-light dark:border-background-dark hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl">swap_vert</span>
+</button>
+</div>
+<!-- They Receive -->
+<div class="flex items-center justify-between">
+<div class="space-y-1 flex-1">
+<label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">They Receive</label>
+<input class="w-full bg-transparent border-none p-0 text-3xl font-bold focus:ring-0 text-primary" readonly="" type="text" value="992,250"/>
+</div>
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-primary/20 px-3 py-2 rounded-lg cursor-pointer border border-primary/10 hover:border-primary/40 transition-all">
+<img alt="RWF" class="w-6 h-4 object-cover rounded-sm" data-alt="Rwanda national flag icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVwlQJP7zyHJP_C2Av5GFd9UyE3i4trJZOSOl5iU4ra57JWkM6yH94ZFsKJr3Lisr4T8zcALqExXjy36whmQrqXqlo9I_gj9by7Y5TQP95JCFT3lYl464vPDjyfFkQYQZYZaC6NW3ZBHCLYGmWsUHlx9QiZfqHcoTH6N2i6MkHGhz-5YhLvCESCwrylruHlIHiATAL8i_BMNRoO3Rq1xBULpCK1UIDCe4LNxvaOJ2Fscf2oaL4UjcX6dSBBm91k-awAzw7c2UmEY"/>
+<span class="font-bold text-sm">RWF</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recipient Section -->
+<div class="mt-8 space-y-4">
+<div class="px-4 flex items-center justify-between">
+<h3 class="font-bold text-base">Send to Recent</h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 hide-scrollbar py-2">
+<!-- Add New -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full border-2 border-dashed border-primary/40 flex items-center justify-center bg-primary/5 hover:bg-primary/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">add</span>
+</div>
+<span class="text-xs font-medium text-slate-500">New</span>
+</div>
+<!-- Recipient 1 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+<img alt="Recipient" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a male recipient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9EdJHIFLx3ZP2NqF8AaqMo6Se3hAdl0j89_sZkQg5pL1ee9YztCC8a2U7_bPkJbjXKuJLejmt1lJwPKdIbgPBSndzrOIwPx6HVtqb-DTwYsvl8LNzx-dPXr2pepBlDPIDC9GLXLKyz_1YO48xXLYI-zK56yMak3bCnbtz5tV8JqXXGjtd1RZimSZSsJd5AacU-rYkheoFnRkL1giwn4fuiCYg0JWvlBrlhGBBSrL0PctQROFwzD7lg80BSAF_IWYMXHOxgTlsKQs"/>
+</div>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">David M.</span>
+</div>
+<!-- Recipient 2 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+<img alt="Recipient" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a female recipient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxjozTyF1xERg2pGcDN0CC-UxmjAz2kFIBza3qhyCEjogMtwbNqYymZY5nBeSXROdunshtxCReh-rYcbTbGiGciEZPSA_XQZpgOETaLTh2ZdJlmwBFUO9PUsBdjsAXRcRmE2emjq-QjrxAeAWawUjvuC4yC91HwbaZcR-LVMwgS0izhP7CBMF9WiSu-rCLJD7-wnVhk7n0m6CgbFXBK94iANR8N3cPyMRQQSAtwFscM2KeiwdoMTuGtDZvEHEb5LpELmdxLrGqYsc"/>
+</div>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">Sarah J.</span>
+</div>
+<!-- Recipient 3 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+<img alt="Recipient" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a male recipient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWwNl6fkf-BscjwmB-0zE-lUdi73VUxxRupAQddYXoohdamCtrEiqYt4Fd57EpQpNg8mwq7l47M4kJDIXgYmtoUqQF2vwRjAcH6ILEg6lhkSe_rcWSoPiY75N72jmSDyqFFrTeK56K1jQe9GgBCWhGHcfNekIItRrCzgN8tq3x-zrVstrI6Y1pRftmr67LG9jksQa7QEjOXyCoiqgOD-TplkuJ4tMrsI22fggJg74ok39UHSCmGokiawD3Q6EzBSxY9Q6CuowhQg"/>
+</div>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">Leon K.</span>
+</div>
+<!-- Recipient 4 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+<img alt="Recipient" class="w-full h-full rounded-full object-cover" data-alt="Portrait of a female recipient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1EDqz5FacyO_C7kVzeBeRrJSeyxEA4x0Zl11cdMM4hAgHyWKPETTURdVCBf7MYMFV7AxJF6wwA_ZBDHWXbbpUg2RH2DM55ox5CYkuQ10C7ygb7lHHMnkkOyyzsxKsG1DUA6cJJynt983LoRGIh1h8o09YwuGaYvMH_7_X1Yc-EEG6zQhu2lxVJS3t52xK37FY2-CNACq9iS5j9fbkIF8gK4DaokvgHPH6UVoBQNJFwO_De9G8C9H0MXLbQbcYsXhFlbrumNeVfIg"/>
+</div>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">Aisha B.</span>
+</div>
+</div>
+<!-- Search Field -->
+<div class="px-4 pt-2">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-12 pr-4 py-3.5 bg-slate-100 dark:bg-primary/10 border-none rounded-xl focus:ring-2 focus:ring-primary/40 text-sm font-medium transition-all" placeholder="Search name, phone or email" type="text"/>
+</div>
+</div>
+</div>
+<!-- Fees Breakdown Card -->
+<div class="px-4 mt-8">
+<div class="bg-white dark:bg-primary/5 rounded-2xl border border-primary/10 overflow-hidden">
+<div class="px-4 py-3 bg-slate-50 dark:bg-primary/10 border-b border-primary/10">
+<h4 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Transaction Summary</h4>
+</div>
+<div class="p-4 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Transfer Amount</span>
+<span class="font-semibold">5,000.00 CNY</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Service Fee</span>
+<span class="text-primary font-semibold">12.50 CNY</span>
+</div>
+<div class="pt-3 border-t border-primary/10 flex justify-between items-end">
+<span class="text-sm font-bold">Total to Pay</span>
+<span class="text-xl font-black text-primary">5,012.50 CNY</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Button -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-primary/10 z-50">
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span>Send Money</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<!-- Navigation Bar (Template Style) -->
+<footer class="hidden">
+<!-- Kept for component reference structure if needed -->
+</footer>
+</body></html>

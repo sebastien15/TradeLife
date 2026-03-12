@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Language Selection - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0b4c4c",
+              "background-light": "#f6f8f8",
+              "background-dark": "#112121",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .selected-card {
+            border-left-width: 4px !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center px-4 py-4 sticky top-0 bg-background-light dark:bg-background-dark z-10">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="ml-2 text-lg font-semibold tracking-tight">Choose Language</h2>
+</header>
+<main class="flex-1 px-6 pb-24">
+<!-- Header Text Section -->
+<div class="pt-6 pb-8">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Choose Language</h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400 text-base">Select your preferred language</p>
+</div>
+<!-- Language Options List -->
+<div class="space-y-4">
+<!-- Selected Option: English -->
+<div class="relative overflow-hidden bg-white dark:bg-slate-100 border-2 border-primary rounded-xl flex items-center p-5 shadow-sm selected-card cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-center justify-center text-3xl mr-4">
+                    🇺🇸
+                </div>
+<div class="flex-1">
+<h3 class="text-lg font-bold text-slate-900 leading-tight">English</h3>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">EN</p>
+</div>
+<div class="flex items-center justify-center text-primary">
+<span class="material-symbols-outlined font-bold">check_circle</span>
+</div>
+</div>
+<!-- Option: Kinyarwanda -->
+<div class="bg-slate-100 dark:bg-slate-800/50 border-2 border-transparent rounded-xl flex items-center p-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all cursor-pointer">
+<div class="flex items-center justify-center text-3xl mr-4">
+                    🇷🇼
+                </div>
+<div class="flex-1">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-tight">Kinyarwanda</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">RW</p>
+</div>
+</div>
+<!-- Option: Français -->
+<div class="bg-slate-100 dark:bg-slate-800/50 border-2 border-transparent rounded-xl flex items-center p-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all cursor-pointer">
+<div class="flex items-center justify-center text-3xl mr-4">
+                    🇫🇷
+                </div>
+<div class="flex-1">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-tight">Français</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">FR</p>
+</div>
+</div>
+<!-- Option: 中文 -->
+<div class="bg-slate-100 dark:bg-slate-800/50 border-2 border-transparent rounded-xl flex items-center p-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all cursor-pointer">
+<div class="flex items-center justify-center text-3xl mr-4">
+                    🇨🇳
+                </div>
+<div class="flex-1">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-tight">中文</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">ZH</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Button -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent">
+<button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg active:scale-[0.98]">
+            Continue
+        </button>
+</div>
+<!-- Background Pattern Decoration (Subtle) -->
+<div class="fixed top-0 right-0 -z-10 opacity-20 dark:opacity-10 pointer-events-none">
+<svg fill="none" height="400" viewbox="0 0 400 400" width="400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="100" fill="url(#paint0_radial_theme)" r="150"></circle>
+<defs>
+<radialgradient cx="0" cy="0" gradienttransform="translate(300 100) rotate(90) scale(150)" gradientunits="userSpaceOnUse" id="paint0_radial_theme" r="1">
+<stop stop-color="#0b4c4c"></stop>
+<stop offset="1" stop-color="#0b4c4c" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+</svg>
+</div>
+</body></html>

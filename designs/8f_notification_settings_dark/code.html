@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#121212",
+                        "row-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>TradeLife Notification Settings</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Workflow Label -->
+<header class="pt-6 px-4">
+<p class="text-primary dark:text-primary/80 text-xs font-bold tracking-widest uppercase pb-3">WORKFLOW 8 — SETTINGS &amp; ERRORS</p>
+</header>
+<!-- Header Navigation -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-row-dark cursor-pointer transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-10">Notification Settings</h2>
+</div>
+<div class="max-w-2xl mx-auto w-full px-4 py-6">
+<!-- Section: Trade Alerts -->
+<div class="mb-8">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider mb-4 px-1">Trade Alerts</h3>
+<div class="space-y-3">
+<!-- Notification Row 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-row-dark rounded-xl px-4 min-h-[80px] py-3 justify-between border border-slate-200 dark:border-white/5 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-emerald-400 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Order Executions</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug">Notify when your buy/sell orders are filled</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-700 p-1 transition-colors has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white shadow-md transform transition-transform duration-200 ease-in-out translate-x-0 peer-checked:translate-x-5"></div>
+<input checked="" class="hidden peer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Notification Row 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-row-dark rounded-xl px-4 min-h-[80px] py-3 justify-between border border-slate-200 dark:border-white/5 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-emerald-400 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Price Alerts</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug">Triggered when an asset hits your target</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-700 p-1 transition-colors has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white shadow-md transform transition-transform duration-200 ease-in-out translate-x-0 peer-checked:translate-x-5"></div>
+<input class="hidden peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: System & Security -->
+<div class="mb-8">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider mb-4 px-1">Security &amp; Account</h3>
+<div class="space-y-3">
+<!-- Notification Row 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-row-dark rounded-xl px-4 min-h-[80px] py-3 justify-between border border-slate-200 dark:border-white/5 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-emerald-400 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Login Attempts</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug">Get alerted on every new sign-in</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-700 p-1 transition-colors has-[:checked]:bg-primary">
+<div class="h-5 w-5 rounded-full bg-white shadow-md transform transition-transform duration-200 ease-in-out translate-x-0 peer-checked:translate-x-5"></div>
+<input checked="" class="hidden peer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Notification Row 4 (Error Handling Example) -->
+<div class="flex flex-col bg-white dark:bg-row-dark rounded-xl px-4 py-4 justify-between border border-red-200 dark:border-red-900/30 shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-4 mb-3">
+<div class="text-red-600 dark:text-red-400 flex items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Critical Failures</p>
+<p class="text-red-600 dark:text-red-400 text-sm font-medium leading-snug">Action required: Email delivery failed</p>
+</div>
+<div class="ml-auto shrink-0">
+<button class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors">FIX NOW</button>
+</div>
+</div>
+<div class="h-1 w-full bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-full opacity-50"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 mt-10">
+<button class="bg-primary hover:bg-opacity-90 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                    Save Changes
+                </button>
+<button class="bg-transparent border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-600 dark:text-slate-400 font-medium py-4 px-6 rounded-xl transition-all">
+                    Restore Defaults
+                </button>
+</div>
+</div>
+<!-- Spacer for mobile scroll -->
+<div class="h-10"></div>
+</div>
+<style>
+        /* Custom styles for the toggle switch interaction without JS */
+        label:has(input:checked) div {
+            transform: translateX(20px);
+        }
+        label:has(input:checked) {
+            background-color: #0b4c4c;
+        }
+    </style>
+</body></html>

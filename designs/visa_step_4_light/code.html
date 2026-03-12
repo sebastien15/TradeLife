@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Application Submitted</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                        "success": "#22c55e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<!-- Top Navigation -->
+<nav class="w-full max-w-md flex items-center justify-between p-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="text-slate-900 dark:text-slate-100 p-2 hover:bg-slate-200 dark:hover:bg-primary/20 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold">Submission Status</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</nav>
+<main class="w-full max-w-md flex flex-col flex-1 px-6 pb-8">
+<!-- Success Hero Section -->
+<section class="flex flex-col items-center py-10 text-center">
+<div class="relative flex items-center justify-center mb-6">
+<!-- Decorative glow -->
+<div class="absolute inset-0 bg-success/20 blur-3xl rounded-full"></div>
+<!-- Success Icon -->
+<div class="relative bg-success text-white rounded-full p-4 flex items-center justify-center shadow-lg shadow-success/20">
+<span class="material-symbols-outlined !text-6xl">check_circle</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold tracking-tight mb-2">Application Submitted Successfully!</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base">
+                Great news! We've received your application. A confirmation email has been sent to your inbox.
+            </p>
+</section>
+<!-- Reference Card -->
+<section class="mb-8">
+<div class="bg-white dark:bg-primary/10 border border-slate-200 dark:border-primary/30 rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Reference ID</span>
+<span class="text-xs bg-success/10 text-success px-2 py-0.5 rounded-full font-medium">Active</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">#VISA-2024-001</p>
+<button class="flex items-center gap-2 bg-slate-100 dark:bg-primary/20 hover:bg-slate-200 dark:hover:bg-primary/30 text-slate-700 dark:text-slate-200 px-3 py-1.5 rounded-lg transition-colors text-sm font-medium">
+<span class="material-symbols-outlined !text-lg">content_copy</span>
+                        Copy
+                    </button>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="mb-10">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6">Next Steps</h3>
+<div class="space-y-0">
+<!-- Step 1: Completed -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-success text-white shrink-0">
+<span class="material-symbols-outlined !text-xl">check</span>
+</div>
+<div class="w-0.5 h-10 bg-success"></div>
+</div>
+<div class="pb-6">
+<p class="font-bold text-slate-900 dark:text-slate-100">Application Submitted</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Your documents are queued for processing.</p>
+</div>
+</div>
+<!-- Step 2: Current -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary bg-primary/20 text-primary shrink-0">
+<span class="material-symbols-outlined !text-xl animate-pulse">description</span>
+</div>
+<div class="w-0.5 h-10 bg-slate-200 dark:bg-primary/20"></div>
+</div>
+<div class="pb-6">
+<p class="font-bold text-slate-900 dark:text-slate-100">Document Verification</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Our agents are reviewing your digital uploads.</p>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-transparent text-slate-400 shrink-0">
+<span class="material-symbols-outlined !text-xl">calendar_today</span>
+</div>
+<div class="w-0.5 h-10 bg-slate-200 dark:bg-primary/20"></div>
+</div>
+<div class="pb-6">
+<p class="font-bold text-slate-400 dark:text-slate-600">Appointment Scheduling</p>
+<p class="text-sm text-slate-400 dark:text-slate-600">Pending verification.</p>
+</div>
+</div>
+<!-- Step 4: Final -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-transparent text-slate-400 shrink-0">
+<span class="material-symbols-outlined !text-xl">task_alt</span>
+</div>
+</div>
+<div>
+<p class="font-bold text-slate-400 dark:text-slate-600">Visa Decision</p>
+<p class="text-sm text-slate-400 dark:text-slate-600">Estimated within 15 business days.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<footer class="mt-auto space-y-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">track_changes</span>
+                Track Application
+            </button>
+<button class="w-full bg-transparent border border-slate-200 dark:border-primary/30 hover:bg-slate-100 dark:hover:bg-primary/10 text-slate-700 dark:text-slate-300 font-semibold py-4 rounded-xl transition-all">
+                Back to Dashboard
+            </button>
+</footer>
+<!-- Image Placeholder for Context (Hidden/Decorative) -->
+<div class="mt-8 opacity-20 pointer-events-none">
+<div class="w-full h-24 rounded-xl overflow-hidden grayscale">
+<img alt="Visa application journey illustration" class="w-full h-full object-cover" data-alt="Abstract visa application journey line art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk8RWLclTJihDwa5SIjwxMtj_vLz6BuMoiR7e4Ib9IyHcNnRiHzvhRC4ZEuJSZ-sshSLIGCTYSMEwXo8yTcS4ZGIDQXToUCz1cfBCsvGehUREmTgPdV6dFaEuGiR7zNXziLgMjEXylfvaf6pJWrTBecIqwkcZLMNNtF9sYlRTJzqay8InnDVU7_NJSLPtMx4KxUVf09IzYvGSKtRLuJZaL2VsNnOAyVni8LVqgpgXbWPo99FLneD_rhyp1niQ7T_P3PQZ883iuqwA"/>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Shipments List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b4c4c",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#112121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-dot::after {
+            content: "●";
+            margin-left: 4px;
+            font-size: 8px;
+            vertical-align: middle;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-primary/20 px-4 py-4 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight text-center flex-1">Ship</h2>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-background-dark"></span>
+</button>
+</header>
+<!-- Tab Navigator -->
+<nav class="bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-primary/20">
+<div class="flex overflow-x-auto no-scrollbar">
+<a class="flex-1 py-4 text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary border-b-2 border-transparent" href="#">
+                Quote
+            </a>
+<a class="flex-1 py-4 text-center text-sm font-bold text-primary border-b-2 border-primary active-tab-dot" href="#">
+                Active
+            </a>
+<a class="flex-1 py-4 text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary border-b-2 border-transparent" href="#">
+                Warehouse
+            </a>
+<a class="flex-1 py-4 text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary border-b-2 border-transparent" href="#">
+                Docs
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 p-4 space-y-4">
+<!-- Search & Filter Bar -->
+<div class="space-y-3">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-slate-100 dark:bg-primary/10 border-none rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary text-sm transition-all placeholder:text-slate-400" placeholder="Search shipments..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-4 py-1.5 bg-primary text-white rounded-lg text-xs font-semibold whitespace-nowrap">All Shipments</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-medium whitespace-nowrap border border-transparent hover:border-primary/30">In Transit</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-medium whitespace-nowrap border border-transparent hover:border-primary/30">Warehouse</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-medium whitespace-nowrap border border-transparent hover:border-primary/30">Air Freight</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-primary/20 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-medium whitespace-nowrap border border-transparent hover:border-primary/30">Sea Freight</button>
+</div>
+</div>
+<!-- Shipment List Content -->
+<div class="space-y-4">
+<!-- Card 1: IN TRANSIT -->
+<div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Tracking ID</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">#SH-2024-001</h3>
+</div>
+<span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded uppercase">In Transit</span>
+</div>
+<div class="flex items-center justify-between mb-6 relative">
+<div class="text-center">
+<p class="text-xs font-bold">Guangzhou</p>
+<p class="text-[10px] text-slate-500 uppercase">China (CAN)</p>
+</div>
+<div class="flex-1 flex flex-col items-center px-4">
+<span class="material-symbols-outlined text-primary/40 text-xl mb-1">local_shipping</span>
+<div class="w-full h-[1px] bg-slate-200 dark:bg-primary/20 relative">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(11,76,76,0.5)]"></div>
+</div>
+</div>
+<div class="text-center">
+<p class="text-xs font-bold">Kigali</p>
+<p class="text-[10px] text-slate-500 uppercase">Rwanda (KGL)</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="text-slate-500">Delivery Progress</span>
+<span class="text-primary font-bold">65%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-primary/20 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%"></div>
+</div>
+<p class="text-[10px] text-slate-500 italic mt-2">Est. Arrival: Oct 24, 2023</p>
+</div>
+</div>
+<!-- Card 2: IN WAREHOUSE -->
+<div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">Inventory Status</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">3 Items in Storage</h3>
+</div>
+</div>
+<span class="px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold rounded uppercase">Stored</span>
+</div>
+<div class="bg-slate-50 dark:bg-primary/10 rounded-lg p-3 mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">location_on</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-slate-800 dark:text-slate-200">TradeLife Guangzhou Warehouse</p>
+<p class="text-[10px] text-slate-500">Unit 14B, Industrial Park Road, GZ</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="text-slate-500">Day 12 of 30 free days</span>
+<span class="text-amber-600 dark:text-amber-500 font-bold">18 days left</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-primary/20 h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex justify-between mt-3">
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">list_alt</span>
+                            View Items
+                        </button>
+<button class="text-xs font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">forward</span>
+                            Release Shipment
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Pending Documentation (Context Filler) -->
+<div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-4 shadow-sm opacity-60">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-primary/20 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-lg">description</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">Shipment #SH-2024-004</p>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Document Processing</h3>
+</div>
+</div>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold rounded uppercase">Review</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="mt-auto bg-background-light dark:bg-[#1b3232] border-t border-slate-200 dark:border-[#254646] px-4 pb-6 pt-2">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-[#95c6c6]" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">local_shipping</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Ship</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-[#95c6c6]" href="#">
+<span class="material-symbols-outlined">format_quote</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Quotes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-[#95c6c6]" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Docs</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-[#95c6c6]" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</footer>
+</body></html>

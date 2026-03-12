@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Call Screen - Dark Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#011a1a", // Deep teal-black base
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .ios-gradient {
+            background: linear-gradient(180deg, #004d4d 0%, #011a1a 100%);
+        }
+        .glass-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .active-button {
+            background: #ec5b13;
+        }
+        .end-call-glow {
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display antialiased text-slate-100 selection:bg-primary/30">
+<!-- Main Container (iPhone 14 Pro aspect ratio simulation) -->
+<div class="relative mx-auto h-[852px] w-[393px] overflow-hidden ios-gradient shadow-2xl flex flex-col">
+<!-- Status Bar Area (Dynamic Island Placeholder) -->
+<div class="h-14 w-full flex items-center justify-between px-8 pt-4">
+<span class="text-sm font-semibold">9:41</span>
+<div class="h-7 w-32 bg-black rounded-full mx-auto mb-1"></div> <!-- Dynamic Island -->
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- Top App Bar / Header Info -->
+<div class="flex flex-col items-center mt-12 px-6">
+<div class="text-slate-400 text-sm font-medium tracking-wide mb-1 uppercase">Calling...</div>
+<h1 class="text-3xl font-bold tracking-tight text-white mb-2">Jordan Smith</h1>
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-lg font-medium text-slate-200">04:12</span>
+</div>
+</div>
+<!-- Caller Identity Section (Avatar) -->
+<div class="flex-1 flex flex-col items-center justify-center -mt-8">
+<div class="relative group">
+<!-- Avatar Glow Effect -->
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-50"></div>
+<!-- Main Avatar Image -->
+<div class="relative size-48 rounded-full border-2 border-white/10 p-1 bg-background-dark/40 overflow-hidden">
+<img alt="Profile photo of Jordan Smith" class="h-full w-full object-cover rounded-full" data-alt="Close up portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcw-6RQ91Ts-BFKqw4KNSbuYs0ygF4DDE0SQssP1NZhjh043uIMhnpyyvu_AOaEd5ORkIpSgm_GDObMdxAjnqOppVDSPgONzLSywU6NbTpjGGFCxhk41BcrohfcQvaCYjxoCbuwrlh0QcjBhhjz6x9gLMKNrThqLeos6TmglAHYRwiiaMHdJ5_VGElkEZk8tpuERVAUfdgI72QshZigyokVc_IHkWPjfrucMyT-TJYcgOQEu0VneytPRRR0r0RqdNzcCPuNdLvqRk"/>
+</div>
+</div>
+</div>
+<!-- Control Grid (2x3) -->
+<div class="px-10 mb-12">
+<div class="grid grid-cols-3 gap-y-10 gap-x-6">
+<!-- Row 1 -->
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full glass-button flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">mic_off</span>
+</button>
+<span class="text-xs font-medium text-slate-300">Mute</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full glass-button flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">grid_on</span>
+</button>
+<span class="text-xs font-medium text-slate-300">Keypad</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full active-button flex items-center justify-center shadow-lg transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl text-white">volume_up</span>
+</button>
+<span class="text-xs font-medium text-slate-300">Speaker</span>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full glass-button flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<span class="text-xs font-medium text-slate-300">Add Call</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full glass-button flex items-center justify-center hover:bg-white/20 transition-colors opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-3xl">videocam</span>
+</button>
+<span class="text-xs font-medium text-slate-400">FaceTime</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-16 rounded-full glass-button flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">person</span>
+</button>
+<span class="text-xs font-medium text-slate-300">Contacts</span>
+</div>
+</div>
+</div>
+<!-- End Call Action -->
+<div class="pb-16 flex justify-center">
+<button class="size-20 rounded-full bg-red-600 flex items-center justify-center end-call-glow active:scale-90 transition-all">
+<span class="material-symbols-outlined text-4xl text-white rotate-[135deg]">call_end</span>
+</button>
+</div>
+<!-- Bottom Indicator -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-white/30 rounded-full"></div>
+</div>
+</body></html>

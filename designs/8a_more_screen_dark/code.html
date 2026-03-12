@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TradeLife - More Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0b4c4c",
+              "background-light": "#f6f8f8",
+              "background-dark": "#112121",
+              "menu-bg": "#1E1E1E",
+              "divider": "#2C2C2C",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .profile-gradient {
+            background: linear-gradient(135deg, #0A4B4B 0%, #0D6969 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="w-full max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl min-h-screen flex flex-col">
+<div class="pt-4 pb-2 px-4 text-center">
+<span class="text-[12pt] text-slate-400 font-medium tracking-wider uppercase">WORKFLOW 8 — SETTINGS &amp; ERRORS</span>
+</div>
+<nav class="flex items-center px-4 py-4 border-b border-primary/10">
+<button class="p-2 -ml-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-100">arrow_back</span>
+</button>
+<h2 class="flex-1 text-center text-lg font-bold text-slate-100 pr-8">More</h2>
+</nav>
+<div class="h-[160pt] profile-gradient flex flex-col items-center justify-center text-white">
+<div class="relative">
+<div class="w-[80pt] h-[80pt] rounded-full border-[3pt] border-white overflow-hidden bg-slate-200">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmSxKbh2JmSGsr3Bh8afs0t_5A1IOKxwq17I0hxtc1-FlU4mfweqSRka7SyvWHrO8FFug9BcHtFU1pNTlDJLIx_Ud-5KmN3ZNaAZGm7yy9p4mQzs_T5Ul4u94OnsHnWnLTRHlD6pUr-4OyGC24uxiYfiB1jlziI88ODv1SUSO_xq48ucAvdzWZlU7Ysbiugj8OPE7FLziBxUDMGC0RDATgIMneGce1zHa3nAkbFlFSAyaRvnz01y-TyWtNZfPRxApE5g3KIhd3byM"/>
+</div>
+</div>
+<div class="mt-3 text-center">
+<h1 class="text-xl font-bold leading-none">John Mukwano</h1>
+<p class="text-white/80 text-sm mt-1">john.mukwano@example.com</p>
+<div class="mt-2 inline-flex items-center px-3 py-0.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
+<span class="text-xs font-semibold tracking-wide uppercase">Pro Member</span>
+</div>
+</div>
+</div>
+<main class="flex-1 pb-24 overflow-y-auto">
+<section class="mt-6">
+<h3 class="px-4 py-2 text-xs font-bold text-primary dark:text-teal-500 tracking-widest uppercase">TOOLS</h3>
+<div class="divide-y divide-divider bg-menu-bg">
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">analytics</span>
+<span class="flex-1 text-slate-100">Market Insights</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">notifications</span>
+<span class="flex-1 text-slate-100">Price Alerts</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">calculate</span>
+<span class="flex-1 text-slate-100">Trade Calculator</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</div>
+</section>
+<section class="mt-6">
+<h3 class="px-4 py-2 text-xs font-bold text-primary dark:text-teal-500 tracking-widest uppercase">RESOURCES</h3>
+<div class="divide-y divide-divider bg-menu-bg">
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">school</span>
+<span class="flex-1 text-slate-100">Learning Hub</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">newspaper</span>
+<span class="flex-1 text-slate-100">Economic Calendar</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</div>
+</section>
+<section class="mt-6">
+<h3 class="px-4 py-2 text-xs font-bold text-primary dark:text-teal-500 tracking-widest uppercase">ACCOUNT</h3>
+<div class="divide-y divide-divider bg-menu-bg">
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">person</span>
+<span class="flex-1 text-slate-100">Personal Details</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">security</span>
+<span class="flex-1 text-slate-100">Security &amp; Privacy</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</div>
+</section>
+<section class="mt-6">
+<h3 class="px-4 py-2 text-xs font-bold text-primary dark:text-teal-500 tracking-widest uppercase">SUPPORT</h3>
+<div class="divide-y divide-divider bg-menu-bg">
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">help</span>
+<span class="flex-1 text-slate-100">Help Center</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+<div class="flex items-center h-[56pt] px-4 hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined text-teal-500 mr-4">chat</span>
+<span class="flex-1 text-slate-100">Live Chat</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</div>
+</section>
+<div class="mt-8 px-4 pb-8">
+<button class="w-full h-[56pt] flex items-center justify-center bg-menu-bg rounded-xl border border-red-900/30 hover:bg-red-900/10 transition-colors">
+<span class="material-symbols-outlined text-red-500 mr-2">logout</span>
+<span class="text-red-500 font-bold">Logout</span>
+</button>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto">
+<div class="flex gap-2 border-t border-primary/20 bg-background-dark/95 backdrop-blur-md px-4 pb-4 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">home</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Trade</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">pie_chart</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Charts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Wallet</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-teal-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">more_horiz</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wide">More</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,15 @@
+diff --git a/node_modules/@react-navigation/routers/lib/module/TabRouter.js b/node_modules/@react-navigation/routers/lib/module/TabRouter.js
+index f3b26a9..b9e2223 100644
+--- a/node_modules/@react-navigation/routers/lib/module/TabRouter.js
++++ b/node_modules/@react-navigation/routers/lib/module/TabRouter.js
+@@ -118,7 +118,9 @@ export function TabRouter({
+       routeNames,
+       routeParamList
+     }) {
+-      const state = partialState;
++      const state = partialState ?? {
++        routes: []
++      };
+       if (state.stale === false) {
+         return state;
+       }
