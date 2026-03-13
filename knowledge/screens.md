@@ -25,15 +25,22 @@
 | Screen              | Route / Component            | Design folder                       | Status |
 |---------------------|------------------------------|-------------------------------------|--------|
 | Home (connected)    | (tabs)/index.tsx             | 2a_home_vpn_connected_light+dark    | ✅     |
-| Home (disconnected) | state in index.tsx           | 2b_home_vpn_disconnected_dark       | 🔲    |
-| VPN server select   | VPNServerSheet component     | 2c_vpn_servers_light                | ❌     |
-| VPN connecting      | state in index.tsx           | NO DESIGN FOLDER (2d)               | 🔲    |
-| VPN dashboard       | state in index.tsx           | NO DESIGN FOLDER (2e)               | 🔲    |
-| VPN error           | state in index.tsx           | 2f_vpn_error_light                  | 🔲    |
-| VPN expired         | sheet in VPNServerSheet      | 2g_vpn_expired_light                | 🔲    |
+| Home (disconnected) | state in index.tsx           | 2b_home_vpn_disconnected_dark       | ✅     |
+| VPN server select   | VPNServerSheet component     | 2c_vpn_servers_light                | ✅     |
+| VPN connecting      | state in VPNCard.tsx         | NO DESIGN FOLDER (2d)               | ✅     |
+| VPN dashboard       | VPNDashboardSheet component  | NO DESIGN FOLDER (2e)               | ✅     |
+| VPN error           | state in VPNCard.tsx         | 2f_vpn_error_light                  | ✅     |
+| VPN expired         | RenewalSheet component       | 2g_vpn_expired_light                | ✅     |
+| Search              | SearchBottomSheet component  | NO DESIGN FOLDER                    | ✅     |
+| Notifications       | NotificationBottomSheet comp | NO DESIGN FOLDER                    | ✅     |
+| Travel hub          | TravelSheet component        | NO DESIGN FOLDER                    | ✅     |
 
-**Home sub-components (all in (tabs)/index.tsx):**
-`<HomeNavBar>` `<VPNCard>` `<CallingCard>` `<SampleTracking>` `<ContainerETA>` `<QuickActions>` `<FAB>`
+**Home sub-components (all in (tabs)/index.tsx or src/components/shared/home/):**
+- Layout: `<HomeNavBar>` `<BalanceRow>` `<VPNCard>` `<SampleTracking>` `<ContainerETA>` `<QuickActions>` `<FABWidget>`
+- Cards: `<WalletBalanceCard>` (gradient, privacy toggle, RWF+CNY) `<CallingCard>` (gradient, simplified)
+- Bottom Sheets: `<VPNServerSheet>` `<VPNDashboardSheet>` `<RenewalSheet>` `<TravelSheet>` `<SearchBottomSheet>` `<NotificationBottomSheet>`
+- Rows: `<NotificationRow>` `<SearchResultRow>`
+- Stores: `vpnStore`, `notificationStore`, `searchStore`, `walletStore`
 
 ---
 
@@ -41,11 +48,11 @@
 
 | Screen          | Route                | Design folder        | Status |
 |-----------------|----------------------|----------------------|--------|
-| Dialer          | call/dialer.tsx      | 3a_dialer_dark       | ❌     |
-| Recent calls    | tab in dialer.tsx    | 3b_recent_calls_dark | 🔲    |
-| Active call     | call/active.tsx      | 3c_active_call_dark  | ❌     |
+| Dialer          | call/dialer.tsx      | 3a_dialer_dark       | ✅     |
+| Recent calls    | tab in dialer.tsx    | 3b_recent_calls_dark | ✅     |
+| Active call     | call/active.tsx      | 3c_active_call_dark  | ✅     |
 | Call on hold    | state in active.tsx  | 3d_call_on_hold_dark | 🔲    |
-| Call summary    | call/summary.tsx     | NO DESIGN FOLDER (3e)| ❌     |
+| Call summary    | call/summary.tsx     | NO DESIGN FOLDER (3e)| ✅     |
 | Low balance     | state in dialer.tsx  | 3f_low_balance_dark  | 🔲    |
 
 ---
@@ -160,17 +167,17 @@
 | WF | Section | Done | Total |
 |----|---------|------|-------|
 | WF1 | Auth | 9/9 | ✅ complete |
-| WF2 | Home + VPN | 1/7 | home only |
-| WF3 | Calling | 0/3 | all stubs |
-| WF4 | Money | 0/7 | all stubs |
+| WF2 | Home + VPN | 10/10 | ✅ complete |
+| WF3 | Calling | 4/6 | mostly done |
+| WF4 | Money | 0/10 | all stubs |
 | WF5 | Shipping | 0/10 | all stubs |
 | WF5 | Warehouse | 0/8 | all stubs |
 | WF6 | Travel | 0/9 | all stubs |
 | WF7 | Community | 0/6 | all stubs |
-| WF8 | More/Settings | 0/11 | all stubs |
+| WF8 | More/Settings | 6/11 | partial |
 | Extra | buy_data, mentors | 0/3 | no files |
 
-**✅ Done: 10 screens | ❌ Remaining: ~55 screens**
+**✅ Done: 29 screens | ❌ Remaining: ~43 screens**
 
 ---
 
