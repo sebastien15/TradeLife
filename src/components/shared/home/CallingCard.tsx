@@ -9,7 +9,6 @@ import Animated, {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
-import { useWalletStore } from '@/stores/walletStore';
 import { Colors } from '@/constants/colors';
 import { Typography } from '@/constants/typography';
 import { Spacing, Radius, Elevation } from '@/constants/spacing';
@@ -22,8 +21,6 @@ interface CallingCardProps {
 }
 
 export function CallingCard({ onMakeCall }: CallingCardProps) {
-  const { callBalance } = useWalletStore();
-
   const opacity = useSharedValue(0);
   const translateY = useSharedValue(16);
   const btnScale = useSharedValue(1);
@@ -51,8 +48,7 @@ export function CallingCard({ onMakeCall }: CallingCardProps) {
     <Animated.View
       style={[
         {
-          marginHorizontal: Spacing.md,
-          marginTop: Spacing.md,
+          flex: 1,
           borderRadius: Radius.md,
           overflow: 'hidden',
           ...Elevation[2],
@@ -82,37 +78,20 @@ export function CallingCard({ onMakeCall }: CallingCardProps) {
           </Text>
         </View>
 
-        {/* Bottom row: left=rate+balance, right=button */}
+        {/* Bottom row: left=rate, right=button */}
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-          <View style={{ gap: 4 }}>
-            {/* Rate chip */}
-            <View
-              style={{
-                backgroundColor: Colors.overlayCard,
-                paddingHorizontal: Spacing.sm,
-                paddingVertical: 2,
-                borderRadius: Radius.xs,
-                alignSelf: 'flex-start',
-              }}
-            >
-              <Text style={{ ...Typography.caption, color: Colors.white }}>
-                {t('home.ratePerMin', { rate: 120 })}
-              </Text>
-            </View>
-            <Text
-              style={{
-                ...Typography.caption,
-                color: Colors.white,
-                opacity: 0.8,
-                textTransform: 'uppercase',
-                letterSpacing: 0.8,
-                marginTop: Spacing.sm,
-              }}
-            >
-              {t('home.balance')}
-            </Text>
-            <Text style={{ ...Typography.h2, color: Colors.white }}>
-              {Math.floor(callBalance).toLocaleString()} RWF
+          {/* Rate chip */}
+          <View
+            style={{
+              backgroundColor: Colors.overlayCard,
+              paddingHorizontal: Spacing.sm,
+              paddingVertical: 4,
+              borderRadius: Radius.xs,
+              alignSelf: 'flex-start',
+            }}
+          >
+            <Text style={{ ...Typography.caption, color: Colors.white }}>
+              {t('home.ratePerMin', { rate: 120 })}
             </Text>
           </View>
 

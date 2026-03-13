@@ -92,6 +92,11 @@ const SampleCard = React.memo(function SampleCard({ sample, onPress }: SampleCar
 export function SampleTracking() {
   const theme = useTheme();
 
+  // Hide if no samples
+  if (SAMPLE_DATA.length === 0) {
+    return null;
+  }
+
   const handlePress = useCallback((_sample: Sample) => {
     // TODO: navigate to sample detail
   }, []);

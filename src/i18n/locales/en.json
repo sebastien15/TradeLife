@@ -221,7 +221,27 @@
     "fabLiveSupport": "Live Support",
     "fabTranslate": "Translate",
     "sampleTracking": "Sample Tracking",
-    "travelHub": "Travel"
+    "travelHub": "Travel",
+    "wallet": "Wallet",
+    "walletBalance": "Wallet Balance",
+    "rwandaFrancs": "Rwandan Francs",
+    "chineseYuan": "Chinese Yuan",
+    "topUpWallet": "Top Up",
+    "showBalance": "Show balance",
+    "hideBalance": "Hide balance"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search shipments, transactions...",
+    "recentSearches": "Recent Searches",
+    "clearHistory": "Clear History",
+    "noResults": "No results found",
+    "tryDifferentKeywords": "Try different keywords",
+    "categoryAll": "All",
+    "categoryShipments": "Shipments",
+    "categorySamples": "Samples",
+    "categoryTransactions": "Transactions",
+    "categoryContacts": "Contacts"
   },
   "money": {
     "balance": "Balance",
@@ -509,6 +529,12 @@
   },
   "notifications": {
     "title": "Notifications",
+    "noNotifications": "No notifications yet",
+    "checkBackLater": "We'll notify you when something happens",
+    "markAllRead": "Mark all read",
+    "clearAll": "Clear all",
+    "deleteNotification": "Delete notification",
+    "markAsRead": "Mark as read",
     "sectionPayments": "PAYMENTS",
     "sectionShipments": "SHIPMENTS",
     "sectionPromotions": "PROMOTIONS",
