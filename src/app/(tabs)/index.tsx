@@ -75,7 +75,7 @@ export default function HomeScreen() {
           onRenewPress={() => setShowRenewalSheet(true)}
         />
 
-        <CallingCard onMakeCall={() => {}} />
+        <CallingCard onMakeCall={() => router.push('/call/dialer')} />
 
         <SampleTracking />
 
