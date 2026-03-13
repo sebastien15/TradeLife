@@ -46,7 +46,7 @@ function AuthGuard() {
     if (!isAuthenticated && !inAuthGroup) {
       router.replace('/(auth)/splash' as never);
     } else if (isAuthenticated && inAuthGroup) {
-      router.replace('/(tabs)/money' as never);
+      router.replace('/(tabs)/' as never);
     }
   }, [hydrated, isAuthenticated, segments, router]);
 
