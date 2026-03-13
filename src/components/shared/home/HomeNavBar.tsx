@@ -38,23 +38,43 @@ export function HomeNavBar({ onSearchPress, onNotificationPress, unreadCount }: 
         </Text>
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: Spacing.md }}>
-        <Pressable onPress={onSearchPress}>
+        <Pressable
+          onPress={onSearchPress}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+        >
           <MaterialIcons name="search" size={24} color={theme.textSecondary} />
         </Pressable>
-        <Pressable onPress={onNotificationPress} style={{ position: 'relative' }}>
+        <Pressable
+          onPress={onNotificationPress}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          style={{ position: 'relative' }}
+        >
           <MaterialIcons name="notifications-none" size={24} color={theme.textSecondary} />
           {unreadCount > 0 && (
             <View
               style={{
                 position: 'absolute',
-                top: 0,
-                right: 0,
-                width: 8,
-                height: 8,
-                borderRadius: 4,
+                top: -4,
+                right: -8,
+                minWidth: 18,
+                height: 18,
+                borderRadius: 9,
                 backgroundColor: Colors.accent,
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingHorizontal: 4,
               }}
-            />
+            >
+              <Text
+                style={{
+                  fontSize: 10,
+                  fontWeight: '700',
+                  color: '#ffffff',
+                }}
+              >
+                {unreadCount > 99 ? '99+' : unreadCount}
+              </Text>
+            </View>
           )}
         </Pressable>
       </View>

@@ -2,11 +2,13 @@ import React, { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { Screen } from '@/components/layout/Screen';
 import { useVpnStore } from '@/stores/vpnStore';
+import { useNotificationStore } from '@/stores/notificationStore';
+import { useAppRouter } from '@/hooks/useAppRouter';
 import { VPNServerSheet } from '@/components/shared/VPNServerSheet';
 import {
   HomeNavBar,
   VPNCard,
-  CallingCard,
+  BalanceRow,
   SampleTracking,
   ContainerETA,
   QuickActions,
@@ -14,6 +16,8 @@ import {
   VPNDashboardSheet,
   RenewalSheet,
   TravelSheet,
+  SearchBottomSheet,
+  NotificationBottomSheet,
 } from '@/components/shared/home';
 import type { VPNServer } from '@/types/domain.types';
 
@@ -29,14 +33,15 @@ const MOCK_SERVERS: VPNServer[] = [
 
 export default function HomeScreen() {
   const vpn = useVpnStore();
+  const { unreadCount } = useNotificationStore();
+  const router = useAppRouter();
   const [showVpnServerSheet, setShowVpnServerSheet] = useState(false);
   const [showVpnDashboard, setShowVpnDashboard] = useState(false);
   const [showRenewalSheet, setShowRenewalSheet] = useState(false);
   const [showFABSheet, setShowFABSheet] = useState(false);
   const [showTravelSheet, setShowTravelSheet] = useState(false);
-  const [unreadNotifications] = useState(3);
-
-  console.log('🏠 HomeScreen render - showVpnDashboard:', showVpnDashboard);
+  const [showSearchSheet, setShowSearchSheet] = useState(false);
+  const [showNotificationSheet, setShowNotificationSheet] = useState(false);
 
   const handleVpnToggle = useCallback(async () => {
     if (!vpn.isConnected && !vpn.isConnecting) {
@@ -66,9 +71,9 @@ export default function HomeScreen() {
     <View style={{ flex: 1 }}>
       <Screen scroll>
         <HomeNavBar
-          onSearchPress={() => {}}
-          onNotificationPress={() => {}}
-          unreadCount={unreadNotifications}
+          onSearchPress={() => setShowSearchSheet(true)}
+          onNotificationPress={() => setShowNotificationSheet(true)}
+          unreadCount={unreadCount}
         />
 
         <VPNCard
@@ -77,7 +82,7 @@ export default function HomeScreen() {
           onRenewPress={() => setShowRenewalSheet(true)}
         />
 
-        <CallingCard onMakeCall={() => {}} />
+        <BalanceRow onMakeCall={() => router.push('/call/dialer')} />
 
         <SampleTracking />
 
@@ -114,6 +119,16 @@ export default function HomeScreen() {
       <TravelSheet
         visible={showTravelSheet}
         onClose={() => setShowTravelSheet(false)}
+      />
+
+      <SearchBottomSheet
+        visible={showSearchSheet}
+        onClose={() => setShowSearchSheet(false)}
+      />
+
+      <NotificationBottomSheet
+        visible={showNotificationSheet}
+        onClose={() => setShowNotificationSheet(false)}
       />
     </View>
   );

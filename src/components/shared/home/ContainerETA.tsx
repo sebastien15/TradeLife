@@ -26,6 +26,11 @@ export function ContainerETA() {
   const theme = useTheme();
   const { shipments } = useShipmentStore();
 
+  // Hide if no shipments
+  if (shipments.length === 0) {
+    return null;
+  }
+
   const activeShipment = shipments.length > 0 ? shipments[0] : null;
   const progress = activeShipment?.progress || 0.3;
 

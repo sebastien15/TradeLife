@@ -125,7 +125,6 @@ export default function LanguageScreen() {
 
   const handleApply = () => {
     // In production: i18n.changeLanguage(selected) + persist to store
-    console.log('Apply language:', selected);
     router.back();
   };
 

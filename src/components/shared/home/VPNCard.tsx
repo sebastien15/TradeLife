@@ -41,18 +41,14 @@ export function VPNCard({ onCardPress, onToggle, onRenewPress }: VPNCardProps) {
   }, [isConnected, thumbX]);
 
   const handleCardPress = useCallback(() => {
-    console.log('🎯 VPN Card pressed!', { isConnected, isConnecting, isExpired });
     if (isConnected || isConnecting) {
-      console.log('📊 Opening VPN Dashboard');
       onCardPress();
     } else if (!isExpired) {
-      console.log('🔘 Opening Server Selection');
       onToggle();
     }
   }, [isConnected, isConnecting, isExpired, onCardPress, onToggle]);
 
   const handleToggle = useCallback(() => {
-    console.log('🔘 Toggle pressed!');
     if (!isConnected && !isConnecting && !isExpired) {
       onToggle();
     }

@@ -38,7 +38,29 @@
       "Bash(git commit:*)",
       "Bash(git branch:*)",
       "Bash(git remote add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(chmod:*)",
+      "Bash(./create-issues.sh:*)",
+      "Bash(gh label create:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh project create:*)",
+      "Bash(PROJECT_ID=\"PVT_kwHOAnp5Z84BRkaW\")",
+      "Bash(REPO=\"sebastien15/TradeLife\")",
+      "Bash(__NEW_LINE_9f1831e1bd655edd__ echo \"Adding issues to project...\")",
+      "Bash(for issue_num in {47..92})",
+      "Bash(do)",
+      "Bash(gh project item-add:*)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(__NEW_LINE_9f1831e1bd655edd__ echo \"\")",
+      "Bash(__NEW_LINE_954f5f930a11f6c3__ echo \"Adding issues to project...\")",
+      "Bash(__NEW_LINE_954f5f930a11f6c3__ echo \"\")",
+      "Bash(cat:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(sudo rm:*)",
+      "Bash(git checkout:*)",
+      "Bash(gh pr create:*)"
     ]
   }
 }
