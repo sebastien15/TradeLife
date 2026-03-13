@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { Screen } from '@/components/layout/Screen';
 import { useVpnStore } from '@/stores/vpnStore';
+import { useAppRouter } from '@/hooks/useAppRouter';
 import { VPNServerSheet } from '@/components/shared/VPNServerSheet';
 import {
   HomeNavBar,
@@ -29,6 +30,7 @@ const MOCK_SERVERS: VPNServer[] = [
 
 export default function HomeScreen() {
   const vpn = useVpnStore();
+  const router = useAppRouter();
   const [showVpnServerSheet, setShowVpnServerSheet] = useState(false);
   const [showVpnDashboard, setShowVpnDashboard] = useState(false);
   const [showRenewalSheet, setShowRenewalSheet] = useState(false);
