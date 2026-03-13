@@ -196,7 +196,7 @@ export default function CallSummaryScreen() {
           >
             {t('call.callAgain')}
           </Button>
-          <Button variant="outline" size="lg" fullWidth onPress={handleDone}>
+          <Button variant="secondary" size="lg" fullWidth onPress={handleDone}>
             {t('common.done')}
           </Button>
         </Animated.View>
