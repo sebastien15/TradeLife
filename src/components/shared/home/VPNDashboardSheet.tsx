@@ -21,13 +21,15 @@ export function VPNDashboardSheet({ visible, onClose, onDisconnect }: VPNDashboa
   const vpn = useVpnStore();
   const sheetRef = useRef<GorhomBottomSheet>(null);
 
-  useEffect(() => {
-    if (visible) {
-      sheetRef.current?.expand();
-    } else {
-      sheetRef.current?.close();
-    }
-  }, [visible]);
+  console.log('🔷 VPNDashboardSheet render - visible:', visible);
+
+  const expiryDate = new Date();
+  expiryDate.setDate(expiryDate.getDate() + vpn.daysRemaining);
+  const formattedExpiry = expiryDate.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
 
   const stats = [
     { label: t('home.dataUsed'), value: '2.4 GB' },
@@ -35,8 +37,17 @@ export function VPNDashboardSheet({ visible, onClose, onDisconnect }: VPNDashboa
     { label: t('home.speed'), value: '45 Mbps' },
   ];
 
+  if (!visible) return null;
+
   return (
-    <BottomSheet ref={sheetRef} snapPoints={['75%']} index={-1} onClose={onClose}>
+    <BottomSheet
+      ref={sheetRef}
+      snapPoints={['75%']}
+      index={0}
+      onClose={onClose}
+      enablePanDownToClose={true}
+      enableDynamicSizing={false}
+    >
       <View style={{ flex: 1, paddingHorizontal: Spacing.md, gap: Spacing.lg }}>
         <Text style={{ ...Typography.h3, color: theme.textPrimary, textAlign: 'center' }}>
           {t('home.vpnDashboard')}
@@ -76,6 +87,37 @@ export function VPNDashboardSheet({ visible, onClose, onDisconnect }: VPNDashboa
               </Text>
               <Text style={{ ...Typography.caption, color: theme.textSecondary }}>
                 {vpn.server?.city || ''} • {vpn.server?.latencyMs || 0}ms
+              </Text>
+            </View>
+          </View>
+        </Card>
+
+        {/* Subscription Info */}
+        <Card radius="lg" padding="lg">
+          <Text style={{ ...Typography.label, color: theme.textSecondary, marginBottom: Spacing.sm }}>
+            Subscription Status
+          </Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <View>
+              <Text style={{ ...Typography.bodyMedium, color: theme.textPrimary }}>
+                {vpn.daysRemaining} days remaining
+              </Text>
+              <Text style={{ ...Typography.caption, color: theme.textSecondary }}>
+                Expires on {formattedExpiry}
+              </Text>
+            </View>
+            <View style={{
+              paddingHorizontal: Spacing.md,
+              paddingVertical: Spacing.xs,
+              backgroundColor: vpn.daysRemaining > 7 ? theme.successBg : theme.warningBg,
+              borderRadius: 12
+            }}>
+              <Text style={{
+                ...Typography.caption,
+                color: vpn.daysRemaining > 7 ? theme.success : theme.warning,
+                fontWeight: '600'
+              }}>
+                {vpn.subscriptionActive ? 'Active' : 'Expired'}
               </Text>
             </View>
           </View>

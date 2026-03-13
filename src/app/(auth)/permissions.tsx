@@ -14,7 +14,7 @@ import {
 import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import * as Notifications from 'expo-notifications';
+// import * as Notifications from 'expo-notifications'; // Disabled - not available in Expo Go SDK 53+
 import * as ImagePicker from 'expo-image-picker';
 import { useTheme } from '@/theme';
 import { Typography } from '@/constants/typography';
@@ -69,9 +69,8 @@ export default function PermissionsScreen() {
   const requestAndContinue = async () => {
     setIsLoading(true);
     try {
-      if (toggles.notifications) {
-        await Notifications.requestPermissionsAsync();
-      }
+      // Notifications permission - skipped in Expo Go (not available in SDK 53+)
+      // Will be requested in production build
       if (toggles.camera) {
         await ImagePicker.requestCameraPermissionsAsync();
       }
