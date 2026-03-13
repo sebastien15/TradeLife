@@ -21,8 +21,6 @@ export function VPNDashboardSheet({ visible, onClose, onDisconnect }: VPNDashboa
   const vpn = useVpnStore();
   const sheetRef = useRef<GorhomBottomSheet>(null);
 
-  console.log('🔷 VPNDashboardSheet render - visible:', visible);
-
   const expiryDate = new Date();
   expiryDate.setDate(expiryDate.getDate() + vpn.daysRemaining);
   const formattedExpiry = expiryDate.toLocaleDateString('en-US', {

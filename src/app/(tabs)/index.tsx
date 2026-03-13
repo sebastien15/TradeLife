@@ -36,8 +36,6 @@ export default function HomeScreen() {
   const [showTravelSheet, setShowTravelSheet] = useState(false);
   const [unreadNotifications] = useState(3);
 
-  console.log('🏠 HomeScreen render - showVpnDashboard:', showVpnDashboard);
-
   const handleVpnToggle = useCallback(async () => {
     if (!vpn.isConnected && !vpn.isConnecting) {
       if (!vpn.server) {

@@ -130,14 +130,11 @@ export default function ProfileEditScreen() {
   const onSubmit = async (data: ProfileEditFormValues) => {
     setIsSaving(true);
     try {
-      // Mock save action
-      if (process.env.EXPO_PUBLIC_USE_MOCK === 'true') {
-        console.log('Mock Save Profile Data:', { ...data, avatarUri });
-      }
-      
+      // Mock save action - in production, call API here
+
       // Simulate network wait
       await new Promise(resolve => setTimeout(resolve, 800));
-      
+
       router.back();
     } catch (e) {
       triggerErrorShake();
@@ -438,10 +435,9 @@ export default function ProfileEditScreen() {
               <TouchableOpacity onPress={() => setShowDeactivateModal(false)} style={{ paddingVertical: 10, paddingHorizontal: 16 }}>
                 <Text style={{ ...Typography.button, color: theme.textSecondary }}>{t('profile.cancel')}</Text>
               </TouchableOpacity>
-              <TouchableOpacity 
+              <TouchableOpacity
                 disabled={deleteConfirmText !== 'DELETE'}
                 onPress={() => {
-                  console.log('Account deactivated');
                   setShowDeactivateModal(false);
                   router.toSignIn();
                 }}
