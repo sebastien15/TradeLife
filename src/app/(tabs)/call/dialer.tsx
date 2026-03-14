@@ -11,10 +11,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { Screen } from '@/components/layout/Screen';
-import { DialerKeypad, RecentCallRow } from '@/components/shared/call';
+import { DialerKeypad, RecentCallRow, LowBalanceAlert } from '@/components/shared/call';
 import { useTheme } from '@/hooks/useTheme';
 import { useAppRouter } from '@/hooks/useAppRouter';
 import { useCallStore } from '@/stores/callStore';
+import { useWalletStore } from '@/stores/walletStore';
 import { Colors } from '@/constants/colors';
 import { Typography } from '@/constants/typography';
 import { Spacing } from '@/constants/spacing';
@@ -57,17 +58,20 @@ export default function DialerScreen() {
   const router = useAppRouter();
   const insets = useSafeAreaInsets();
   const callStore = useCallStore();
+  const walletStore = useWalletStore();
 
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showRecents, setShowRecents] = useState(false);
+  const [showLowBalanceModal, setShowLowBalanceModal] = useState(false);
 
   const callBtnScale = useSharedValue(1);
   const deleteBtnScale = useSharedValue(1);
   const numberShake = useSharedValue(0);
 
-  // Mock balance - in production this would come from wallet store
-  const callCreditMinutes = 45;
-  const callCreditRWF = 2250;
+  // Get call balance from wallet store (in RWF, not minutes)
+  // For now using mock data, but will sync with wallet store
+  const callCreditRWF = 2250; // This should come from walletStore.balance or a dedicated call balance
+  const callCreditMinutes = Math.floor(callCreditRWF / 50); // 50 RWF per minute
 
   const callBtnAnimStyle = useAnimatedStyle(() => ({
     transform: [{ scale: callBtnScale.value }],
@@ -121,10 +125,17 @@ export default function DialerScreen() {
       return;
     }
 
+    // Check balance before call (threshold: 100 RWF = ~2 minutes)
+    const LOW_BALANCE_THRESHOLD = 100;
+    if (callCreditRWF < LOW_BALANCE_THRESHOLD) {
+      setShowLowBalanceModal(true);
+      return;
+    }
+
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    callStore.startCall(phoneNumber);
+    callStore.startCall(phoneNumber, callCreditRWF);
     router.push('/call/active');
-  }, [phoneNumber, callStore, router, numberShake]);
+  }, [phoneNumber, callStore, router, numberShake, callCreditRWF]);
 
   const handleRecentCallPress = useCallback((number: string) => {
     setPhoneNumber(number);
@@ -381,6 +392,13 @@ export default function DialerScreen() {
           </Animated.View>
         )}
       </ScrollView>
+
+      {/* Low Balance Alert Modal */}
+      <LowBalanceAlert
+        visible={showLowBalanceModal}
+        onClose={() => setShowLowBalanceModal(false)}
+        remainingBalance={callCreditRWF}
+      />
     </Screen>
   );
 }

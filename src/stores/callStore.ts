@@ -5,6 +5,9 @@ type CallStatus = 'idle' | 'dialing' | 'ringing' | 'connected' | 'ended';
 // Cost per second in RWF (50 RWF/min)
 const COST_PER_SECOND = 50 / 60;
 
+// Low balance threshold in RWF (~2 minutes at 50 RWF/min)
+const LOW_BALANCE_THRESHOLD = 100;
+
 interface CallState {
   isInCall: boolean;
   duration: number;      // seconds elapsed
@@ -13,16 +16,22 @@ interface CallState {
   status: CallStatus;
   isMuted: boolean;
   isSpeaker: boolean;
+  isOnHold: boolean;
+  currentBalance: number;  // in RWF
+  showLowBalanceWarning: boolean;
   // Actions
-  startCall: (number: string) => void;
+  startCall: (number: string, initialBalance: number) => void;
   endCall: () => void;
   toggleMute: () => void;
   toggleSpeaker: () => void;
+  toggleHold: () => void;
   tick: () => void;      // called by setInterval every second
   setStatus: (status: CallStatus) => void;
+  checkBalance: () => void;
+  dismissLowBalanceWarning: () => void;
 }
 
-export const useCallStore = create<CallState>()((set) => ({
+export const useCallStore = create<CallState>()((set, get) => ({
   isInCall: false,
   duration: 0,
   cost: 0,
@@ -30,8 +39,11 @@ export const useCallStore = create<CallState>()((set) => ({
   status: 'idle',
   isMuted: false,
   isSpeaker: false,
+  isOnHold: false,
+  currentBalance: 0,
+  showLowBalanceWarning: false,
 
-  startCall: (number) =>
+  startCall: (number, initialBalance) =>
     set({
       isInCall: true,
       remoteNumber: number,
@@ -40,12 +52,16 @@ export const useCallStore = create<CallState>()((set) => ({
       cost: 0,
       isMuted: false,
       isSpeaker: false,
+      isOnHold: false,
+      currentBalance: initialBalance,
+      showLowBalanceWarning: false,
     }),
 
   endCall: () =>
     set({
       isInCall: false,
       status: 'ended',
+      isOnHold: false,
     }),
 
   toggleMute: () =>
@@ -54,14 +70,39 @@ export const useCallStore = create<CallState>()((set) => ({
   toggleSpeaker: () =>
     set((state) => ({ isSpeaker: !state.isSpeaker })),
 
-  tick: () =>
+  toggleHold: () =>
+    set((state) => ({
+      isOnHold: !state.isOnHold,
+      // Auto-mute when putting on hold
+      isMuted: !state.isOnHold ? true : state.isMuted,
+    })),
+
+  tick: () => {
+    const state = get();
+    if (!state.isInCall || state.isOnHold || state.status !== 'connected') return;
+
     set((state) => {
-      if (!state.isInCall || state.status !== 'connected') return {};
       const duration = state.duration + 1;
       const cost = duration * COST_PER_SECOND;
       return { duration, cost };
-    }),
+    });
+
+    // Check balance after cost update
+    get().checkBalance();
+  },
 
   setStatus: (status) =>
     set({ status }),
+
+  checkBalance: () => {
+    const state = get();
+    const remainingBalance = state.currentBalance - state.cost;
+
+    if (remainingBalance < LOW_BALANCE_THRESHOLD && !state.showLowBalanceWarning) {
+      set({ showLowBalanceWarning: true });
+    }
+  },
+
+  dismissLowBalanceWarning: () =>
+    set({ showLowBalanceWarning: false }),
 }));

@@ -16,7 +16,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { Avatar } from '@/components/ui/Avatar';
-import { CallTimer, CallControlButton } from '@/components/shared/call';
+import { CallTimer, CallControlButton, LowBalanceAlert } from '@/components/shared/call';
 import { useTheme } from '@/hooks/useTheme';
 import { useAppRouter } from '@/hooks/useAppRouter';
 import { useCallStore } from '@/stores/callStore';
@@ -38,6 +38,7 @@ export default function ActiveCallScreen() {
   const avatarScale = useSharedValue(1);
   const avatarGlow = useSharedValue(0);
   const endCallScale = useSharedValue(1);
+  const resumeBtnScale = useSharedValue(1);
 
   // Simulate call connection sequence
   useEffect(() => {
@@ -118,15 +119,26 @@ export default function ActiveCallScreen() {
     callStore.toggleSpeaker();
   };
 
+  const handleHold = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    callStore.toggleHold();
+  };
+
   // Extract contact info from phone number (in production, lookup contact by number)
   const contactName = 'Wei Zhang';
   const contactNumber = callStore.remoteNumber;
 
-  const statusText = status === 'dialing'
+  const statusText = callStore.isOnHold
+    ? t('call.onHold')
+    : status === 'dialing'
     ? t('call.calling')
     : status === 'ringing'
     ? 'Ringing...'
     : t('call.connected');
+
+  const resumeBtnAnimStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: resumeBtnScale.value }],
+  }));
 
   return (
     <LinearGradient
@@ -150,16 +162,33 @@ export default function ActiveCallScreen() {
             paddingVertical: Spacing.sm,
           }}
         >
-          <Text
-            style={{
-              ...Typography.caption,
-              color: 'rgba(255, 255, 255, 0.6)',
-              textTransform: 'uppercase',
-              letterSpacing: 1,
-            }}
-          >
-            {statusText}
-          </Text>
+          {callStore.isOnHold ? (
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+              <Ionicons name="pause-circle" size={16} color={Colors.accent} />
+              <Text
+                style={{
+                  ...Typography.caption,
+                  color: Colors.accent,
+                  textTransform: 'uppercase',
+                  letterSpacing: 1,
+                  fontWeight: '600',
+                }}
+              >
+                {statusText}
+              </Text>
+            </View>
+          ) : (
+            <Text
+              style={{
+                ...Typography.caption,
+                color: 'rgba(255, 255, 255, 0.6)',
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
+            >
+              {statusText}
+            </Text>
+          )}
         </Animated.View>
 
         {/* Avatar Section */}
@@ -222,6 +251,24 @@ export default function ActiveCallScreen() {
             >
               {contactName}
             </Text>
+
+            {/* On Hold Badge */}
+            {callStore.isOnHold && (
+              <Animated.View entering={FadeIn.duration(300)}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    color: Colors.accent,
+                    fontWeight: '700',
+                    marginTop: Spacing.xs,
+                    marginBottom: Spacing.xs,
+                  }}
+                >
+                  {t('call.onHold')}
+                </Text>
+              </Animated.View>
+            )}
+
             <Text
               style={{
                 ...Typography.body,
@@ -256,18 +303,20 @@ export default function ActiveCallScreen() {
             label={callStore.isMuted ? t('call.unmute') : t('call.mute')}
             onPress={handleMute}
             active={callStore.isMuted}
+            disabled={callStore.isOnHold}
           />
           <CallControlButton
-            icon="keypad"
-            label="Keypad"
-            onPress={() => {}}
-            disabled={true}
+            icon={callStore.isOnHold ? 'play' : 'pause'}
+            label={callStore.isOnHold ? t('call.resume') : t('call.hold')}
+            onPress={handleHold}
+            active={callStore.isOnHold}
           />
           <CallControlButton
             icon={callStore.isSpeaker ? 'volume-high' : 'volume-medium'}
             label={t('call.speaker')}
             onPress={handleSpeaker}
             active={callStore.isSpeaker}
+            disabled={callStore.isOnHold}
           />
           <CallControlButton
             icon="videocam-off"
@@ -276,6 +325,52 @@ export default function ActiveCallScreen() {
             disabled={true}
           />
         </Animated.View>
+
+        {/* Resume Button - Only show when on hold */}
+        {callStore.isOnHold && (
+          <Animated.View
+            entering={FadeIn.duration(300)}
+            style={{
+              paddingHorizontal: Spacing.xl,
+              marginBottom: Spacing.md,
+            }}
+          >
+            <AnimatedPressable
+              onPress={() => {
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                callStore.toggleHold();
+              }}
+              onPressIn={() => {
+                resumeBtnScale.value = withSpring(0.95, { damping: 15, stiffness: 400 });
+              }}
+              onPressOut={() => {
+                resumeBtnScale.value = withSpring(1, { damping: 15, stiffness: 400 });
+              }}
+              style={[
+                {
+                  height: 64,
+                  borderRadius: 32,
+                  backgroundColor: Colors.accent,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: Spacing.sm,
+                  shadowColor: Colors.accent,
+                  shadowOffset: { width: 0, height: 4 },
+                  shadowOpacity: 0.4,
+                  shadowRadius: 12,
+                  elevation: 8,
+                },
+                resumeBtnAnimStyle,
+              ]}
+            >
+              <Ionicons name="play" size={28} color={Colors.white} />
+              <Text style={{ fontSize: 18, fontWeight: '700', color: Colors.white }}>
+                {t('call.resumeCall')}
+              </Text>
+            </AnimatedPressable>
+          </Animated.View>
+        )}
 
         {/* End Call Button */}
         <Animated.View
@@ -322,6 +417,13 @@ export default function ActiveCallScreen() {
           </Text>
         </Animated.View>
       </View>
+
+      {/* Low Balance Alert Modal */}
+      <LowBalanceAlert
+        visible={callStore.showLowBalanceWarning}
+        onClose={callStore.dismissLowBalanceWarning}
+        remainingBalance={callStore.currentBalance - callStore.cost}
+      />
     </LinearGradient>
   );
 }
