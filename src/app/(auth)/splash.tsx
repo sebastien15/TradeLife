@@ -2,7 +2,7 @@
 // TradeLife — Splash Screen
 // Design: 1a_splash_screen_dark
 // ─────────────────────────────────────────────────────────────────────────────
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import Animated, {
   FadeIn,
@@ -19,10 +19,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { Colors } from '@/constants/colors';
 import { useAppRouter } from '@/hooks/useAppRouter';
+import { useHydration } from '@/app/_layout';
 import { t } from '@/i18n';
 
 export default function SplashScreen() {
   const router = useAppRouter();
+  const { isHydrated } = useHydration();
+  const [minTimeElapsed, setMinTimeElapsed] = useState(false);
 
   // Logo card springs in from scale 0.7 → 1
   const logoScale = useSharedValue(0.7);
@@ -60,17 +63,27 @@ export default function SplashScreen() {
       dot3Opacity.value = withDelay(280, wave);
     }, 600);
 
-    // Navigate to welcome after animation completes
-    const navTimer = setTimeout(() => {
-      router.replace('/(auth)/');
-    }, 2600);
+    // Timer 1: Minimum splash display time (1.8s for animations)
+    const minTimer = setTimeout(() => {
+      setMinTimeElapsed(true);
+    }, 1800);
 
     return () => {
       clearTimeout(dotsTimer);
-      clearTimeout(navTimer);
+      clearTimeout(minTimer);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Timer 2: Navigate only when BOTH conditions met
+  useEffect(() => {
+    if (isHydrated && minTimeElapsed) {
+      const navTimer = setTimeout(() => {
+        router.replace('/(auth)/');
+      }, 100); // Small delay for smooth transition
+      return () => clearTimeout(navTimer);
+    }
+  }, [isHydrated, minTimeElapsed, router]);
 
   return (
     <View style={{ flex: 1, backgroundColor: Colors.primary }}>

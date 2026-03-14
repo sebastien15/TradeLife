@@ -375,7 +375,72 @@
     "flightNumber": "Flight No.",
     "seats": "{{count}} seats left",
     "bookFlight": "Book Flight",
-    "eticket": "E-Ticket"
+    "eticket": "E-Ticket",
+    "hub": {
+      "title": "Plan Your Journey",
+      "subtitle": "Explore seamless travel solutions today",
+      "services": "Our Services",
+      "visa": "Visa Application",
+      "flights": "Book Flight",
+      "hotels": "Hotels",
+      "inspector": "Inspector",
+      "tips": "Travel Tips"
+    },
+    "flights": {
+      "search": {
+        "title": "Book Your Flight",
+        "roundTrip": "Round Trip",
+        "oneWay": "One Way",
+        "searchFlights": "Search Flights",
+        "recentSearches": "Recent Searches",
+        "adults": "{{count}} Adult",
+        "adults_plural": "{{count}} Adults"
+      },
+      "results": {
+        "title": "{{origin}} → {{destination}}",
+        "meta": "{{date}} • {{passengers}} Passenger",
+        "meta_plural": "{{date}} • {{passengers}} Passengers",
+        "foundCount": "{{count}} flight found",
+        "foundCount_plural": "{{count}} flights found",
+        "bestDeal": "Best Deal",
+        "cheapest": "Cheapest",
+        "fastest": "Fastest",
+        "nonStop": "Non-stop",
+        "airlines": "Airlines",
+        "selectFlight": "Select Flight",
+        "perPerson": "USD per person",
+        "duration": "{{hours}}h {{minutes}}m",
+        "nonStopLabel": "NON-STOP",
+        "stops": "{{count}} stop",
+        "stops_plural": "{{count}} stops"
+      },
+      "detail": {
+        "title": "Select Your Seat",
+        "changeFlight": "Change Flight",
+        "fareBenefits": "Fare Benefits",
+        "available": "Available",
+        "selected": "Selected",
+        "occupied": "Occupied",
+        "premium": "Premium",
+        "continue": "Continue with This Flight",
+        "selectedSeat": "Seat {{seat}}"
+      },
+      "confirmation": {
+        "title": "Booking Confirmed",
+        "success": "Success!",
+        "message": "Your flight has been booked",
+        "reference": "Booking Reference",
+        "passenger": "Passenger",
+        "date": "Date",
+        "gate": "Gate",
+        "boarding": "Boarding",
+        "seat": "Seat",
+        "scanAtGate": "Scan at gate {{gate}}",
+        "saveToWallet": "Save to Apple Wallet",
+        "shareReceipt": "Share Receipt",
+        "download": "Download"
+      }
+    }
   },
   "call": {
     "title": "Call",

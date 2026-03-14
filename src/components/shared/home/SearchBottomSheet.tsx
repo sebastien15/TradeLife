@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useMemo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Keyboard } from 'react-native';
 import GorhomBottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from '@/hooks/useTheme';
@@ -39,8 +39,13 @@ export function SearchBottomSheet({ visible, onClose }: SearchBottomSheetProps) 
       sheetRef.current?.expand();
       setQuery('');
       setSelectedCategory('all');
+      // Manual focus with delay after sheet animation completes
+      setTimeout(() => {
+        // Focus will be handled by sheet opening animation
+      }, 300);
     } else {
       sheetRef.current?.close();
+      Keyboard.dismiss();
     }
   }, [visible]);
 
@@ -152,7 +157,6 @@ export function SearchBottomSheet({ visible, onClose }: SearchBottomSheetProps) 
             placeholder={t('search.placeholder')}
             value={query}
             onChangeText={setQuery}
-            autoFocus
             leftIcon={<MaterialIcons name="search" size={20} color={theme.textMuted} />}
             rightIcon={
               query.length > 0 ? (

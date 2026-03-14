@@ -121,7 +121,11 @@ export default function OtpScreen() {
     if (!success) {
       shake();
       setDigits(Array(CODE_LENGTH).fill(''));
-      setTimeout(() => inputRefs.current[0]?.focus(), 100);
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          inputRefs.current[0]?.focus();
+        });
+      }, 150);
     }
   };
 
@@ -130,7 +134,9 @@ export default function OtpScreen() {
     setCanResend(false);
     setResendCountdown(RESEND_SECONDS);
     setDigits(Array(CODE_LENGTH).fill(''));
-    inputRefs.current[0]?.focus();
+    requestAnimationFrame(() => {
+      inputRefs.current[0]?.focus();
+    });
     await requestOtp(phone ?? '');
     const timer = setInterval(() => {
       setResendCountdown((prev) => {

@@ -43,3 +43,6 @@ export * from './shared/RateTimer';
 
 // Call
 export * from './shared/call';
+
+// Travel
+export * from './shared/travel';
