@@ -95,6 +95,9 @@ export const Colors = {
   wechat:   '#07C160',  // WeChat Pay green
   alipay:   '#1677FF',  // Alipay blue
   whatsapp: '#25D366',  // WhatsApp green
+  mtn:      '#FDE047',  // MTN Mobile Money yellow
+  airtel:   '#DC2626',  // Airtel Money red
+  cardBg:   '#1e293b',  // Generic card/dark payment method background (slate-800)
 
   // ── Tab Bar ───────────────────────────────────────────────────────────────
   tabBarActive:   '#0b4c4c',  // active tab icon/label (= primary)
