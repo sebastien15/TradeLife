@@ -221,7 +221,27 @@
     "fabLiveSupport": "Live Support",
     "fabTranslate": "Translate",
     "sampleTracking": "Sample Tracking",
-    "travelHub": "Travel"
+    "travelHub": "Travel",
+    "wallet": "Wallet",
+    "walletBalance": "Wallet Balance",
+    "rwandaFrancs": "Rwandan Francs",
+    "chineseYuan": "Chinese Yuan",
+    "topUpWallet": "Top Up",
+    "showBalance": "Show balance",
+    "hideBalance": "Hide balance"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search shipments, transactions...",
+    "recentSearches": "Recent Searches",
+    "clearHistory": "Clear History",
+    "noResults": "No results found",
+    "tryDifferentKeywords": "Try different keywords",
+    "categoryAll": "All",
+    "categoryShipments": "Shipments",
+    "categorySamples": "Samples",
+    "categoryTransactions": "Transactions",
+    "categoryContacts": "Contacts"
   },
   "money": {
     "balance": "Balance",
@@ -445,7 +465,16 @@
     "totalCost": "Total Cost",
     "callAgain": "Call Again",
     "lowBalance": "Low call credit",
-    "addCredit": "Add Credit"
+    "addCredit": "Add Credit",
+    "onHold": "On Hold",
+    "resumeCall": "Resume Call",
+    "hold": "Hold",
+    "resume": "Resume",
+    "lowBalanceAlert": "Low Balance Alert",
+    "minutesRemaining": "You have less than {{count}} minutes remaining",
+    "currentBalance": "CURRENT BALANCE",
+    "addCreditAmount": "Add ${{amount}} Credit",
+    "dismissAndContinue": "Dismiss and continue"
   },
   "more": {
     "title": "More",
@@ -578,6 +607,12 @@
   },
   "notifications": {
     "title": "Notifications",
+    "noNotifications": "No notifications yet",
+    "checkBackLater": "We'll notify you when something happens",
+    "markAllRead": "Mark all read",
+    "clearAll": "Clear all",
+    "deleteNotification": "Delete notification",
+    "markAsRead": "Mark as read",
     "sectionPayments": "PAYMENTS",
     "sectionShipments": "SHIPMENTS",
     "sectionPromotions": "PROMOTIONS",

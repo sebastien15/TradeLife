@@ -35,6 +35,16 @@ export type FlightClass = 'economy' | 'business';
 
 export type VisaDocStatus = 'pending' | 'approved' | 'rejected';
 
+export type SearchCategory = 'all' | 'shipments' | 'samples' | 'transactions' | 'contacts';
+
+export type NotificationType =
+  | 'shipment_update'
+  | 'payment_success'
+  | 'payment_failed'
+  | 'warehouse_alert'
+  | 'system'
+  | 'promotion';
+
 // ── Core entities (used by UI components) ───────────────────────────────────
 
 /** Minimal shipment used in list views / ShipmentCard */
@@ -202,6 +212,33 @@ export interface VisaDocType {
   type: string;
   url: string;
   status: VisaDocStatus;
+}
+
+export interface SearchResult {
+  id: string;
+  title: string;
+  subtitle: string;
+  category: SearchCategory;
+  iconUrl?: string;
+  metadata?: string;
+  actionUrl?: string;
+}
+
+export interface RecentSearch {
+  id: string;
+  query: string;
+  timestamp: string; // ISO 8601
+  category: SearchCategory;
+}
+
+export interface Notification {
+  id: string;
+  type: NotificationType;
+  title: string;
+  body: string;
+  timestamp: string; // ISO 8601
+  isRead: boolean;
+  actionUrl?: string;
 }
 
 // ── Request payload types ────────────────────────────────────────────────────

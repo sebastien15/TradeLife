@@ -98,7 +98,6 @@ export default function MoreScreen() {
 
   const handleLogout = () => {
     // router.signOut() or authStore.signOut() in real usage
-    console.log('logout out');
   };
 
   return (

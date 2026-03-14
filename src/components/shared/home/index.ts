@@ -1,6 +1,8 @@
 export { HomeNavBar } from './HomeNavBar';
+export { WalletBalanceCard } from './WalletBalanceCard';
 export { VPNCard } from './VPNCard';
 export { CallingCard } from './CallingCard';
+export { BalanceRow } from './BalanceRow';
 export { SampleTracking } from './SampleTracking';
 export { ContainerETA } from './ContainerETA';
 export { QuickActions } from './QuickActions';
@@ -8,3 +10,5 @@ export { FABWidget } from './FABWidget';
 export { VPNDashboardSheet } from './VPNDashboardSheet';
 export { RenewalSheet } from './RenewalSheet';
 export { TravelSheet } from './TravelSheet';
+export { SearchBottomSheet } from './SearchBottomSheet';
+export { NotificationBottomSheet } from './NotificationBottomSheet';

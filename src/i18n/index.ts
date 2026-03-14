@@ -6,7 +6,7 @@ import fr from './locales/fr.json';
 import zh from './locales/zh.json';
 
 i18n.use(initReactI18next).init({
-  compatibilityJSON: 'v4',
+  compatibilityJSON: 'v3', // Changed from v4 to avoid Intl.PluralRules requirement
   lng: 'en',
   fallbackLng: 'en',
   resources: {

@@ -22,8 +22,8 @@ export const useVpnStore = create<VpnState>()(
       isConnected: false,
       isConnecting: false,
       server: null,
-      daysRemaining: 0,
-      subscriptionActive: false,
+      daysRemaining: 30, // Active subscription for development
+      subscriptionActive: true, // Active subscription for development
 
       connect: async (server) => {
         set({ isConnecting: true, server });

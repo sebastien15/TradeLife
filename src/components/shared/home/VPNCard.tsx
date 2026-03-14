@@ -48,15 +48,11 @@ export function VPNCard({ onCardPress, onToggle, onRenewPress }: VPNCardProps) {
     }
   }, [isConnected, isConnecting, isExpired, onCardPress, onToggle]);
 
-  const handleToggle = useCallback(
-    (e: { stopPropagation: () => void }) => {
-      e.stopPropagation();
-      if (!isConnected && !isConnecting && !isExpired) {
-        onToggle();
-      }
-    },
-    [isConnected, isConnecting, isExpired, onToggle]
-  );
+  const handleToggle = useCallback(() => {
+    if (!isConnected && !isConnecting && !isExpired) {
+      onToggle();
+    }
+  }, [isConnected, isConnecting, isExpired, onToggle]);
 
   const iconBg = isExpired
     ? theme.neutralBg
@@ -152,6 +148,11 @@ export function VPNCard({ onCardPress, onToggle, onRenewPress }: VPNCardProps) {
                 {t('home.disconnected')}
               </Text>
             ) : null}
+            {isConnected && (
+              <Text style={{ ...Typography.caption, color: theme.textMuted, marginTop: 2 }}>
+                Tap card for details →
+              </Text>
+            )}
           </View>
         </View>
 
