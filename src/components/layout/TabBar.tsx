@@ -15,10 +15,10 @@ import { Typography } from '@/constants/typography';
 type IconName = keyof typeof MaterialIcons.glyphMap;
 
 const TAB_CONFIG: Record<string, { labelKey: string; icon: IconName; activeIcon: IconName }> = {
-  index: { labelKey: 'tabs.home',    icon: 'home',        activeIcon: 'home' },
-  money: { labelKey: 'tabs.trade',   icon: 'bar-chart',   activeIcon: 'bar-chart' },
-  ship:  { labelKey: 'tabs.ship',    icon: 'inventory-2', activeIcon: 'inventory-2' },
-  more:  { labelKey: 'tabs.profile', icon: 'person',      activeIcon: 'person' },
+  index:  { labelKey: 'tabs.home',   icon: 'home',        activeIcon: 'home' },
+  money:  { labelKey: 'tabs.trade',  icon: 'bar-chart',   activeIcon: 'bar-chart' },
+  travel: { labelKey: 'tabs.travel', icon: 'flight',      activeIcon: 'flight' },
+  more:   { labelKey: 'tabs.profile', icon: 'person',     activeIcon: 'person' },
 };
 
 interface TabItemProps {

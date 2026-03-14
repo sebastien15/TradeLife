@@ -205,6 +205,44 @@ export interface FlightType {
   currency: string;
   seats: number;
   class: FlightClass;
+  airlineLogoUrl?: string;
+  stops?: number;
+}
+
+export interface FlightSearchParams {
+  origin: string; // IATA code (e.g., "KGL")
+  destination: string;
+  departureDate: string; // ISO 8601
+  returnDate?: string; // Optional for one-way
+  passengers: number;
+  class: FlightClass;
+  tripType: 'roundtrip' | 'oneway';
+}
+
+export interface FlightBooking {
+  id: string;
+  flight: FlightType;
+  passenger: {
+    name: string;
+    passportNumber: string;
+    seatNumber: string;
+  };
+  bookingReference: string;
+  totalPrice: number;
+  currency: string;
+  status: 'confirmed' | 'pending' | 'cancelled';
+  qrCodeUrl: string;
+  gate?: string;
+  boardingTime?: string;
+}
+
+export interface SeatMap {
+  rows: number;
+  columns: string[]; // ['A', 'B', 'C', 'D', 'E', 'F']
+  available: string[]; // ['1A', '1B', '2C', ...]
+  occupied: string[];
+  premium: string[];
+  selected?: string;
 }
 
 export interface VisaDocType {

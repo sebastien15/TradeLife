@@ -11,6 +11,8 @@ import type {
   VPNServer,
   SupplierType,
   TrackingEvent,
+  FlightType,
+  SeatMap,
 } from '@/types/domain.types';
 
 // ── Mock User ─────────────────────────────────────────────────────────────────
@@ -326,6 +328,108 @@ export const mockSuppliers: SupplierType[] = [
   },
 ];
 
+// ── Mock Flights ──────────────────────────────────────────────────────────────
+
+export const mockFlights: FlightType[] = [
+  {
+    id: 'flight-001',
+    airline: 'Emirates',
+    flightNumber: 'EK729',
+    origin: 'KGL',
+    destination: 'DXB',
+    departureTime: '2024-04-15T14:30:00Z',
+    arrivalTime: '2024-04-15T21:45:00Z',
+    price: 850,
+    currency: 'USD',
+    seats: 12,
+    class: 'economy',
+    stops: 0,
+    airlineLogoUrl: 'https://images.kiwi.com/airlines/64/EK.png',
+  },
+  {
+    id: 'flight-002',
+    airline: 'Qatar Airways',
+    flightNumber: 'QR1432',
+    origin: 'KGL',
+    destination: 'DXB',
+    departureTime: '2024-04-15T10:00:00Z',
+    arrivalTime: '2024-04-15T19:30:00Z',
+    price: 920,
+    currency: 'USD',
+    seats: 8,
+    class: 'economy',
+    stops: 1,
+    airlineLogoUrl: 'https://images.kiwi.com/airlines/64/QR.png',
+  },
+  {
+    id: 'flight-003',
+    airline: 'Ethiopian Airlines',
+    flightNumber: 'ET308',
+    origin: 'KGL',
+    destination: 'DXB',
+    departureTime: '2024-04-15T06:45:00Z',
+    arrivalTime: '2024-04-15T16:15:00Z',
+    price: 780,
+    currency: 'USD',
+    seats: 20,
+    class: 'economy',
+    stops: 1,
+    airlineLogoUrl: 'https://images.kiwi.com/airlines/64/ET.png',
+  },
+  {
+    id: 'flight-004',
+    airline: 'Kenya Airways',
+    flightNumber: 'KQ412',
+    origin: 'KGL',
+    destination: 'DXB',
+    departureTime: '2024-04-15T16:20:00Z',
+    arrivalTime: '2024-04-16T02:00:00Z',
+    price: 890,
+    currency: 'USD',
+    seats: 15,
+    class: 'economy',
+    stops: 1,
+    airlineLogoUrl: 'https://images.kiwi.com/airlines/64/KQ.png',
+  },
+  {
+    id: 'flight-005',
+    airline: 'Emirates',
+    flightNumber: 'EK731',
+    origin: 'KGL',
+    destination: 'DXB',
+    departureTime: '2024-04-15T22:15:00Z',
+    arrivalTime: '2024-04-16T05:30:00Z',
+    price: 865,
+    currency: 'USD',
+    seats: 18,
+    class: 'economy',
+    stops: 0,
+    airlineLogoUrl: 'https://images.kiwi.com/airlines/64/EK.png',
+  },
+];
+
+export const mockSeatMap: SeatMap = {
+  rows: 20,
+  columns: ['A', 'B', 'C', 'D', 'E', 'F'],
+  available: [
+    '1A', '1B', '1C', '1D', '1E', '1F',
+    '2A', '2B', '2D', '2E', '2F',
+    '3A', '3C', '3D', '3F',
+    '4B', '4C', '4D', '4E',
+    '5A', '5B', '5C', '5D', '5E', '5F',
+    '6A', '6B', '6C', '6D', '6E', '6F',
+    '7A', '7C', '7D', '7E', '7F',
+    '8A', '8B', '8C', '8D', '8E',
+    '9A', '9B', '9C', '9D', '9E', '9F',
+    '10A', '10C', '10D', '10E', '10F',
+  ],
+  occupied: [
+    '2C', '3B', '3E', '4A', '4F',
+    '7B', '8F', '10B',
+  ],
+  premium: ['1A', '1B', '1C', '1D', '1E', '1F', '2A', '2B', '2C'],
+};
+
 // ── Mock response router ──────────────────────────────────────────────────────
 
 type MockEntry = [pattern: RegExp, response: unknown];
@@ -354,6 +458,32 @@ const MOCK_ROUTES: MockEntry[] = [
   [/\/call\/balance/,            { minutes: 45 }],
   [/\/call\/initiate/,           { sessionId: 'mock-session-xyz' }],
   [/\/call\/end/,                { success: true }],
+  [/\/flights\/search/,          mockFlights],
+  [/\/flights\/[^/]+$/,          { ...mockFlights[0], seatMap: mockSeatMap }],
+  [/\/flights\/book/,            {
+    id: `BK${Date.now()}`,
+    flight: mockFlights[0],
+    passenger: { name: 'Jean Baptiste', passportNumber: 'P123456', seatNumber: '5A' },
+    bookingReference: `TL${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+    totalPrice: mockFlights[0].price,
+    currency: mockFlights[0].currency,
+    status: 'confirmed',
+    qrCodeUrl: '',
+    gate: 'A12',
+    boardingTime: '13:30',
+  }],
+  [/\/bookings\/[^/]+$/,         {
+    id: 'BK12345',
+    flight: mockFlights[0],
+    passenger: { name: 'Jean Baptiste', passportNumber: 'P123456', seatNumber: '5A' },
+    bookingReference: 'TLABC123',
+    totalPrice: mockFlights[0].price,
+    currency: mockFlights[0].currency,
+    status: 'confirmed',
+    qrCodeUrl: '',
+    gate: 'A12',
+    boardingTime: '13:30',
+  }],
 ];
 
 export function getMockResponse(url: string, _method: string): unknown {
