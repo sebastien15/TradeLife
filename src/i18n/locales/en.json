@@ -396,7 +396,16 @@
     "totalCost": "Total Cost",
     "callAgain": "Call Again",
     "lowBalance": "Low call credit",
-    "addCredit": "Add Credit"
+    "addCredit": "Add Credit",
+    "onHold": "On Hold",
+    "resumeCall": "Resume Call",
+    "hold": "Hold",
+    "resume": "Resume",
+    "lowBalanceAlert": "Low Balance Alert",
+    "minutesRemaining": "You have less than {{count}} minutes remaining",
+    "currentBalance": "CURRENT BALANCE",
+    "addCreditAmount": "Add ${{amount}} Credit",
+    "dismissAndContinue": "Dismiss and continue"
   },
   "more": {
     "title": "More",
