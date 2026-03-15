@@ -1,52 +1,111 @@
-import React, { useEffect, useCallback } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import React, { useEffect } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import Animated, {
-  useSharedValue,
   useAnimatedStyle,
+  useSharedValue,
+  withDelay,
+  withSequence,
   withSpring,
   withTiming,
-  withDelay,
 } from 'react-native-reanimated';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import { format } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/hooks/useTheme';
 import { Typography } from '@/constants/typography';
-import { Spacing, Radius } from '@/constants/spacing';
+import { Radius, Spacing } from '@/constants/spacing';
 import { Button } from '@/components/ui/Button';
 
-interface PaymentFailedProps {
+interface SummaryRow {
+  label: string;
+  value: string;
+}
+
+export interface PaymentFailedProps {
   reason: string;
+  reasonTitle?: string;
   amount: number;
   currency: string;
   recipient: string;
+  date?: Date;
   errorCode?: string;
   onRetry: () => void;
+  onAddFunds?: () => void;
   onChangeMethod?: () => void;
   onCancel: () => void;
 }
 
+function Row({ label, value }: SummaryRow) {
+  const theme = useTheme();
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: Spacing.sm,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.divider,
+      }}
+    >
+      <Text style={{ ...Typography.bodySm, color: theme.textSecondary }}>{label}</Text>
+      <Text style={{ ...Typography.bodySm, color: theme.textPrimary, fontWeight: '600' }}>
+        {value}
+      </Text>
+    </View>
+  );
+}
+
 export function PaymentFailed({
   reason,
+  reasonTitle,
   amount,
   currency,
   recipient,
+  date = new Date(),
   errorCode,
   onRetry,
+  onAddFunds,
   onChangeMethod,
   onCancel,
 }: PaymentFailedProps) {
   const theme = useTheme();
-  const xScale   = useSharedValue(0);
-  const contentOp = useSharedValue(0);
+  const { t } = useTranslation();
+
+  const iconScale  = useSharedValue(0);
+  const shake      = useSharedValue(0);
+  const contentOp  = useSharedValue(0);
+  const actionsOp  = useSharedValue(0);
 
   useEffect(() => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-    xScale.value    = withSpring(1, { damping: 8, stiffness: 150 });
-    contentOp.value = withDelay(300, withTiming(1, { duration: 400 }));
-  }, [xScale, contentOp]);
 
-  const xStyle      = useAnimatedStyle(() => ({ transform: [{ scale: xScale.value }] }));
+    // Pop in then shake
+    iconScale.value = withSpring(1, { damping: 8, stiffness: 150 });
+    shake.value = withDelay(
+      400,
+      withSequence(
+        withTiming(-12, { duration: 60 }),
+        withTiming(12,  { duration: 60 }),
+        withTiming(-8,  { duration: 60 }),
+        withTiming(8,   { duration: 60 }),
+        withTiming(-4,  { duration: 60 }),
+        withTiming(0,   { duration: 60 }),
+      ),
+    );
+
+    contentOp.value = withDelay(300, withTiming(1, { duration: 400 }));
+    actionsOp.value = withDelay(600, withTiming(1, { duration: 300 }));
+  }, []);
+
+  const iconStyle    = useAnimatedStyle(() => ({
+    transform: [{ scale: iconScale.value }, { translateX: shake.value }],
+  }));
   const contentStyle = useAnimatedStyle(() => ({ opacity: contentOp.value }));
+  const actionsStyle = useAnimatedStyle(() => ({ opacity: actionsOp.value }));
+
+  const formattedAmount = `${currency} ${amount.toLocaleString()}`;
 
   return (
     <ScrollView
@@ -54,6 +113,7 @@ export function PaymentFailed({
       contentContainerStyle={{ padding: Spacing.lg, gap: Spacing.lg }}
       showsVerticalScrollIndicator={false}
     >
+      {/* Error icon + title */}
       <View style={{ alignItems: 'center', gap: Spacing.md, paddingTop: Spacing.xl }}>
         <Animated.View
           style={[
@@ -61,16 +121,24 @@ export function PaymentFailed({
               width: 120,
               height: 120,
               borderRadius: 60,
+              borderWidth: 4,
+              borderColor: theme.error + '33',
               backgroundColor: theme.errorBg,
               alignItems: 'center',
               justifyContent: 'center',
             },
-            xScale && xStyle,
+            iconStyle,
           ]}
         >
-          <MaterialIcons name="cancel" size={80} color={theme.error} />
+          <MaterialIcons name="close" size={72} color={theme.error} />
         </Animated.View>
-        <Text style={{ ...Typography.h1, color: theme.textPrimary }}>Payment Failed</Text>
+
+        <Text style={{ ...Typography.h1, color: theme.textPrimary, textAlign: 'center' }}>
+          {t('money.paymentFailed')}
+        </Text>
+        <Text style={{ ...Typography.bodySm, color: theme.textSecondary, textAlign: 'center' }}>
+          {t('money.paymentFailedReason')}
+        </Text>
       </View>
 
       <Animated.View style={[{ gap: Spacing.md }, contentStyle]}>
@@ -79,23 +147,44 @@ export function PaymentFailed({
           style={{
             borderRadius: Radius.lg,
             borderWidth: 1,
-            borderColor: theme.error + '40',
-            backgroundColor: theme.errorBg,
+            borderColor: theme.error + '33',
+            backgroundColor: theme.surface,
             padding: Spacing.md,
             gap: Spacing.sm,
           }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: Spacing.sm }}>
-            <MaterialIcons name="info-outline" size={18} color={theme.error} />
-            <Text style={{ ...Typography.label, color: theme.error }}>Why did this happen?</Text>
+            <View
+              style={{
+                backgroundColor: theme.errorBg,
+                padding: Spacing.sm,
+                borderRadius: Radius.md,
+              }}
+            >
+              <MaterialIcons name="account-balance-wallet" size={20} color={theme.error} />
+            </View>
+            <Text style={{ ...Typography.label, color: theme.textPrimary, flex: 1 }}>
+              {reasonTitle ?? t('money.whyFailed')}
+            </Text>
           </View>
-          <Text style={{ ...Typography.bodySm, color: theme.textSecondary }}>{reason}</Text>
+          <Text style={{ ...Typography.bodySm, color: theme.textSecondary, lineHeight: 20 }}>
+            {reason}
+          </Text>
           {errorCode ? (
-            <Text style={{ ...Typography.caption, color: theme.textMuted }}>{`Code: ${errorCode}`}</Text>
+            <Text style={{ ...Typography.caption, color: theme.textMuted }}>
+              {t('money.errorCode', { code: errorCode })}
+            </Text>
           ) : null}
         </View>
 
-        {/* "You were not charged" */}
+        {/* Transaction summary */}
+        <View>
+          <Row label={t('money.amount')}    value={formattedAmount} />
+          <Row label={t('money.recipient')} value={recipient} />
+          <Row label={t('money.date')}      value={format(date, 'MMM d, yyyy · HH:mm')} />
+        </View>
+
+        {/* "Not charged" reassurance */}
         <View
           style={{
             borderRadius: Radius.md,
@@ -108,18 +197,42 @@ export function PaymentFailed({
         >
           <MaterialIcons name="lock" size={18} color={theme.success} />
           <Text style={{ ...Typography.bodySm, color: theme.textSecondary, flex: 1 }}>
-            {`You were not charged. ${currency} ${amount.toLocaleString()} intended for ${recipient} is safe.`}
+            {t('money.notCharged')}.{' '}
+            {t('money.notChargedDetail', {
+              currency,
+              amount: amount.toLocaleString(),
+              recipient,
+            })}
           </Text>
         </View>
+      </Animated.View>
 
-        {/* Actions */}
-        <View style={{ gap: Spacing.sm, marginTop: Spacing.sm }}>
-          <Button variant="primary"   fullWidth onPress={onRetry}>Try Again</Button>
-          {onChangeMethod ? (
-            <Button variant="secondary" fullWidth onPress={onChangeMethod}>Change Payment Method</Button>
-          ) : null}
-          <Button variant="ghost"     fullWidth onPress={onCancel}>Cancel</Button>
-        </View>
+      {/* Action buttons */}
+      <Animated.View style={[{ gap: Spacing.sm }, actionsStyle]}>
+        <Button
+          variant="primary"
+          fullWidth
+          leftIcon={<MaterialIcons name="refresh" size={18} color="#fff" />}
+          onPress={onRetry}
+        >
+          {t('common.tryAgain')}
+        </Button>
+
+        {onAddFunds ? (
+          <Button variant="secondary" fullWidth onPress={onAddFunds}>
+            {t('common.addFunds')}
+          </Button>
+        ) : null}
+
+        {onChangeMethod ? (
+          <Button variant="secondary" fullWidth onPress={onChangeMethod}>
+            {t('money.changePaymentMethod')}
+          </Button>
+        ) : null}
+
+        <Button variant="ghost" fullWidth onPress={onCancel}>
+          {t('money.cancelTransaction')}
+        </Button>
       </Animated.View>
     </ScrollView>
   );
